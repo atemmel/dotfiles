@@ -1,0 +1,16 @@
+#URxvt.background: #000000
+URxvt.background: [80]#000000
+URxvt.foreground: #CCCCCC
+
+URxvt.scrollBar: false
+URxvt.font: xft:monospace:size=10
+#URxvt.font: xft:scientifica:size=11
+URxvt.depth: 32
+URxvt.intensityStyles: false
+
+#URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,resize-font
+
+sh ~/.fehbg &
+#unclutter -idle 1 &
