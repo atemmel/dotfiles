@@ -1,5 +1,5 @@
 #! /bin/bash
 export VISUAL=nvim
-export EDITO=$viusal
+export EDITOR=$visual
 exec i3
 
