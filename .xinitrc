@@ -1,5 +1,9 @@
 #! /bin/bash
 export VISUAL=nvim
 export EDITOR=$visual
-exec i3
+export TERMCMD=urxvt
 
+systemctl --user import-environment DISPLAY
+xset +fp ~/.local/share/fonts &
+
+exec i3
