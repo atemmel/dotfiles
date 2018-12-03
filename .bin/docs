@@ -1,0 +1,18 @@
+#!/bin/bash
+
+names="cppref\narchwiki\npython\nsfml\nmdn\nbash"
+
+declare -A docs=( 
+	["cppref"]="https://en.cppreference.com/w/" 
+	["archwiki"]="https://wiki.archlinux.org/"
+	["python"]="https://docs.python.org/3/"
+	["sfml"]="https://www.sfml-dev.org/documentation/2.5.1/annotated.php"
+	["mdn"]="https://developer.mozilla.org/en-US/"
+	["bash"]="https://tiswww.case.edu/php/chet/bash/bashref.html"
+)
+
+for key in ${docs[@]}; do echo $key; done
+
+choice=$(echo -e "$names"  | rofi -dmenu -i -p Documentation)
+
+$TERMCMD -e w3m ${docs[$choice]}
