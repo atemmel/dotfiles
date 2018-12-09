@@ -1,0 +1,5 @@
+#rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+rofi.font: scientifica 8
+rofi.lines: 20
+
