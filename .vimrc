@@ -38,10 +38,11 @@ nnoremap O ZZ
 nnoremap q :q <CR>
 nnoremap W :w <CR>
 nnoremap E :e<SPACE>
-nnoremap : <Nop>
+nnoremap : <nop>
 nnoremap Q <nop>
 nnoremap e w
 nnoremap w b
+nnoremap 3 I#<ESC>
 nnoremap 7 I//<ESC>
 vmap <S-c> "+y
 

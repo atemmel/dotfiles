@@ -1,7 +1,5 @@
 #!/bin/bash
 
-names=
-
 declare -A docs=( 
 	["cppref"]="https://en.cppreference.com/w/" 
 	["archwiki"]="https://wiki.archlinux.org/"
