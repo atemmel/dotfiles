@@ -1,6 +1,6 @@
 #!/bin/bash
 
-names="cppref\narchwiki\npython\nsfml\nmdn\nbash"
+names=
 
 declare -A docs=( 
 	["cppref"]="https://en.cppreference.com/w/" 
@@ -11,8 +11,10 @@ declare -A docs=(
 	["bash"]="https://tiswww.case.edu/php/chet/bash/bashref.html"
 )
 
-#for key in ${docs[@]}; do echo $key; done
+names=$(echo ${!docs[@]} | tr " " "\n" | sort)
 
-choice=$(echo -e "$names"  | rofi -dmenu -i -p Documentation)
+choice=$(echo "$names" | rofi -dmenu -i -p Documentation)
 
-$BROWSER ${docs[$choice]}
+if [ -z "$choice" ] ; then exit ; fi
+
+$BROWSER "${docs[$choice]}"
