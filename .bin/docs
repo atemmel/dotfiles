@@ -11,8 +11,8 @@ declare -A docs=(
 	["bash"]="https://tiswww.case.edu/php/chet/bash/bashref.html"
 )
 
-for key in ${docs[@]}; do echo $key; done
+#for key in ${docs[@]}; do echo $key; done
 
 choice=$(echo -e "$names"  | rofi -dmenu -i -p Documentation)
 
-$TERMCMD -e w3m ${docs[$choice]}
+$BROWSER ${docs[$choice]}

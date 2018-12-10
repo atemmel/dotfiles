@@ -19,5 +19,6 @@ alias la='ls -la'
 
 export PATH=$PATH:~/.bin/
 export PS1='[\W]$ '
+export BROWSER=firefox
 
 eval "$(pyenv init -)"

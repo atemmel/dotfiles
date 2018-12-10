@@ -42,6 +42,7 @@ nnoremap : <Nop>
 nnoremap Q <nop>
 nnoremap e w
 nnoremap w b
+nnoremap 7 I//<ESC>
 vmap <S-c> "+y
 
 set ruler
