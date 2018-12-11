@@ -22,6 +22,7 @@ set $left h
 set $right l
 
 set $terminal urxvt
+set $browser firefox
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
@@ -168,10 +169,13 @@ exec --no-startup-id wal -R -n
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-#exec --no-startup-id unclutter -idle 1 &
 exec --no-startup-id unclutter --timeout 1 --ignore-scrolling &
 
 exec --no-startup-id dunst &
+
+bindsym Mod1+shift+d exec --no-startup-id docs
+
+bindsym Mod1+y exec --no-startup-id playclip
 
 bindsym Mod1+m exec --no-startup-id $terminal -e ncmpcpp
 
@@ -181,9 +185,9 @@ bindsym Mod1+p exec --no-startup-id scrot
 
 bindsym Mod1+shift+p exec --no-startup-id retroarch --libretro /usr/lib/libretro/desmume_libretro.so /home/temmel/Downloads/1016\ -\ Pokemon\ -\ Pearl\ Version\ \(USA\)\ \(Rev\ 5\).7z
 
-bindsym Mod1+c exec --no-startup-id chromium
+bindsym Mod1+c exec --no-startup-id $browser
 
-assign [class="(?i)chromium"] 2
+assign [class="(?i)$browser"] 2
 assign [class="(?i)discord"] 5
 
 bindsym Mod1+i exec --no-startup-id i3lock-fancy
