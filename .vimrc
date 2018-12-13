@@ -30,6 +30,11 @@ set ts=4 sw=4
 "autocmd Filetype tex setl updatetime=1
 
 inoremap ii <ESC>
+
+nnoremap : <nop>
+nnoremap Q <nop>
+nnoremap <SPACE> <nop>
+
 nnoremap H K
 nnoremap J o
 nnoremap K O
@@ -38,12 +43,14 @@ nnoremap O ZZ
 nnoremap q :q <CR>
 nnoremap W :w <CR>
 nnoremap E :e<SPACE>
-nnoremap : <nop>
-nnoremap Q <nop>
 nnoremap e w
 nnoremap w b
 nnoremap 3 I#<ESC>
 nnoremap 7 I//<ESC>
+nnoremap <C-h> {
+nnoremap <C-l> }
+nnoremap U <C-r>
+
 vmap <S-c> "+y
 
 set ruler

@@ -1,0 +1,5 @@
+#!/bin/bash
+n=$(pacman -Qu | wc -l)
+if [ n==0 ] ; then exit ; fi
+echo "$n"
+

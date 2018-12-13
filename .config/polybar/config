@@ -37,7 +37,7 @@ font-3 = siji:pixelsize=16;1
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem memory cpu wlan eth battery temperature date 
+modules-right = updates filesystem memory cpu wlan eth battery temperature date 
 
 tray-position = right
 tray-padding = 2
@@ -58,14 +58,6 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
 format <label-indicator>
 
 format-prefix-foreground = ${colors.foreground}
@@ -85,7 +77,6 @@ interval = 25
 
 mount-0 = /
 
-#label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-mounted = %free%
 label-mounted-foreground = ${colors.foreground}
 label-mounted-underline = ${colors.foreground}
@@ -161,15 +152,18 @@ label-song-ellipsis = true
 
 label-song = %title%
 
-;bar-progress-width = 45
-;bar-progress-indicator = |
-;bar-progress-fill = ─
-;bar-progress-empty = ─
-
 bar-progress-width = 16
 bar-progress-indicator = 
 bar-progress-fill = %{T4}█%{T-}
 bar-progress-empty = %{T4}█%{T-}
+
+[module/updates]
+type = custom/script
+exec = countupdates
+label-underline = ${colors.foreground}
+label = %output% PKG
+interval = 180
+
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -181,7 +175,6 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-#format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.foreground}
 label = %gb_used%
@@ -210,13 +203,12 @@ ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp4s0
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip%
+format-connected-underline = ${colors.foreground}
+;label-connected = %local_ip%
+label-connected = ETH
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -282,4 +274,3 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
