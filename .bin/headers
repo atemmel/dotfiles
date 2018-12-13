@@ -1,0 +1,4 @@
+#!/bin/bash
+selection=$(find /usr/include -type f | sort | rofi -dmenu -i -p "headers")
+[ "$selection" ] ||  exit 0 
+$TERMCMD -e "$VISUAL" "$selection"

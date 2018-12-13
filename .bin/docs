@@ -11,7 +11,7 @@ declare -A docs=(
 
 names=$(echo ${!docs[@]} | tr " " "\n" | sort)
 
-choice=$(echo "$names" | rofi -dmenu -i -p Documentation)
+choice=$(echo "$names" | rofi -dmenu -i -p documentation)
 
 if [ -z "$choice" ] ; then exit ; fi
 
