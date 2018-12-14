@@ -1,4 +1,4 @@
 #!/bin/bash
 n=$(pacman -Qu | wc -l)
-[ $n==0 ] || exit 0
+[ "$n" = "0" ] && exit 0
 echo "$n"
