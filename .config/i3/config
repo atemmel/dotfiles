@@ -183,6 +183,8 @@ bindsym Mod1+f exec --no-startup-id $terminal -e ranger
 
 bindsym Mod1+p exec --no-startup-id scrot
 
+bindsym Mod1+n exec --no-startup-id headers
+
 bindsym Mod1+shift+p exec --no-startup-id retroarch --libretro /usr/lib/libretro/desmume_libretro.so /home/temmel/Downloads/1016\ -\ Pokemon\ -\ Pearl\ Version\ \(USA\)\ \(Rev\ 5\).7z
 
 bindsym Mod1+c exec --no-startup-id $browser
