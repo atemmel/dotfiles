@@ -159,7 +159,7 @@ bar-progress-empty = %{T4}█%{T-}
 
 [module/updates]
 type = custom/script
-exec = countupdates
+exec = ~/.bin/countupdates
 label-underline = ${colors.foreground}
 label = %output% PKG
 interval = 180
