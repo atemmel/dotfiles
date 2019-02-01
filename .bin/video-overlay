@@ -1,0 +1,2 @@
+#!/bin/bash
+ffmpeg -i "$1" -i "$2" -filter_complex '[1] scale=320:240 [over]; [0][over] overlay=1600:0' "$3"

@@ -37,7 +37,7 @@ font-3 = siji:pixelsize=16;1
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = updates filesystem memory cpu wlan eth battery temperature date 
+modules-right = updates filesystem memory cpu wlan eth battery temperature weather date 
 
 tray-position = right
 tray-padding = 2
@@ -163,6 +163,14 @@ exec = ~/.bin/countupdates
 label-underline = ${colors.foreground}
 label = %output% PKG
 interval = 180
+
+[module/weather]
+type = custom/script
+exec = ~/.bin/weather
+label-underline = ${colors.foreground}
+label = %output%
+interval = 180
+click-left = ~/.bin/weather-medium
 
 [module/cpu]
 type = internal/cpu

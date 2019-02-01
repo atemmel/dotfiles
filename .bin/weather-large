@@ -1,0 +1,2 @@
+#!/bin/bash
+notify-send "$(awk 'NR > 7 && NR < 39 {print}' .cache/weather-stripped)"

@@ -1,5 +1,3 @@
 #!/bin/bash
-
 repo=$(xclip -o)
-
 (git clone $repo)

@@ -175,7 +175,7 @@ exec --no-startup-id dunst &
 
 exec --no-startup-id flameshot &
 
-bindsym Mod1+shift+d exec --no-startup-id docs
+bindsym Mod1+shift+d exec --no-startup-id $HOME/.bin/docs
 
 bindsym Mod1+y exec --no-startup-id playclip
 

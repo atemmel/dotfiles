@@ -1,5 +1,3 @@
 #!/bin/bash
-
 video=$(xclip -o)
-
 (youtube-dl -o "~/Videos/%(title)s.%(ext)s" $video)

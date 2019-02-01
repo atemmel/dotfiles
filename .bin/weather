@@ -1,0 +1,7 @@
+#!/bin/bash
+curl -s wttr.in > ~/.cache/weather
+cp ~/.cache/weather ~/.cache/weather-parseable
+cp ~/.cache/weather ~/.cache/weather-stripped
+sed -i 's,\x1B\[[0-9;]*[a-zA-Z],\ ,g' ~/.cache/weather-parseable
+sed -i 's,\x1B\[[0-9;]*[a-zA-Z],,g' ~/.cache/weather-stripped
+awk 'NR == 4 {printf("%d ←→ %d%s", $4, $6, $7)}' ~/.cache/weather-parseable

@@ -16,6 +16,7 @@ alias v='nvim'
 alias c='clear'
 alias ll='ls -l'
 alias la='ls -la'
+alias miun='sftp adte1700@minafiler.miun.se'
 
 export PATH=$PATH:~/.bin/
 export PS1='[\W]$ '

@@ -1,0 +1,3 @@
+#!/bin/bash
+printf "file %s\nfile %s\n" "$1" "$2"  > list.tmp
+ffmpeg -f concat -safe 0 -i list.tmp -c copy "$3"

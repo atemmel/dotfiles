@@ -1,5 +1,4 @@
 #!/bin/bash
-
 declare -A docs=( 
 	["cppref"]="https://en.cppreference.com/w/" 
 	["archwiki"]="https://wiki.archlinux.org/"
@@ -10,9 +9,7 @@ declare -A docs=(
 )
 
 names=$(echo ${!docs[@]} | tr " " "\n" | sort)
-
 choice=$(echo "$names" | rofi -dmenu -i -p documentation)
-
 if [ -z "$choice" ] ; then exit ; fi
 
 $BROWSER "${docs[$choice]}"
