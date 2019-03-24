@@ -5,10 +5,10 @@ default_border none
 #Colors
 
 set_from_resource $default i3wm.color0 #000000
-set_from_resource $focused i3wm.color4 #C6C6C6
+set_from_resource $focused i3wm.color8 #C6C6C6
 set_from_resource $text i3wm.color7 #FFFFFF
 
-client.focused $focused $focused $focused $text $focused
+client.focused $focused $focused $focused $focused $focused
 client.unfocused $default $default $default $text $default
 client.focused_inactive $default $default $text $default $default $default
 
@@ -205,6 +205,7 @@ bindsym Mod1+i exec --no-startup-id i3lock-fancy
 gaps inner 10
 gaps outer 10
 smart_gaps on
+smart_borders on
 
 for_window [class="^.*"] border pixel 3
 

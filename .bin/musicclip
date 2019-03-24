@@ -1,0 +1,3 @@
+#!/bin/bash
+music=$(xclip -o)
+ytdl-music "$music"

@@ -1,6 +1,6 @@
 [colors]
 background = ${xrdb:color0:#000}
-background-alt =  ${xrdb:color2:#444}
+background-alt =  ${xrdb:color8:#444}
 foreground = ${xrdb:color7:#222}
 
 ;Icon prefix color
@@ -147,10 +147,10 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 64
-label-song-ellipsis = true
+;label-song-maxlen = 64
+;label-song-ellipsis = true
 
-label-song = %title%
+label-song = %title% // %artist%
 
 bar-progress-width = 16
 bar-progress-indicator = 
