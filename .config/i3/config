@@ -183,7 +183,7 @@ bindsym Mod1+m exec --no-startup-id $terminal -e ncmpcpp
 
 #bindsym Mod1+f exec --no-startup-id $terminal -e ranger
 # For dev purposes
-bindsym Mod1+f exec --no-startup-id $terminal -e spider
+bindsym Mod1+f exec --no-startup-id $terminal -e $HOME/.bin/spider
 
 bindsym Mod1+p exec --no-startup-id scrot
 
