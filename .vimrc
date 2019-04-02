@@ -53,6 +53,8 @@ nnoremap <C-h> {
 nnoremap <C-l> }
 nnoremap U <C-r>
 
+nnoremap M :make<bar>cw<cr>
+
 vmap <S-c> "+y
 
 "emmet nonsense
