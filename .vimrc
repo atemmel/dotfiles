@@ -8,13 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'aurieh/discord.nvim'
-"Plugin 'ObserverOfTime/discord.nvim'
-
-"Plugin 'scrooloose/nerdtree'
 
 Plugin 'dylanaraps/wal.vim'
-
-Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
@@ -28,8 +23,6 @@ set number
 set scrolloff=7
 set ts=4 sw=4
 "set cc=80
-
-"autocmd Filetype tex setl updatetime=1
 
 inoremap ii <ESC>
 
@@ -53,16 +46,14 @@ nnoremap <C-h> {
 nnoremap <C-l> }
 nnoremap U <C-r>
 
+nnoremap <C-H> <C-w>h
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-L> <C-w>l
+nnoremap <C-V> <C-w>v
+
 nnoremap M :make<bar>cw<cr>
 
 vmap <S-c> "+y
-
-"emmet nonsense
-let g:user_emmet_mode='n'    "only enable normal mode functions.
-"let g:user_emmet_mode='inv'  "enable all functions, which is equal to
-"let g:user_emmet_mode='a'    "enable all function in all mode.
-
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
 
 set ruler
