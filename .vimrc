@@ -42,15 +42,10 @@ nnoremap e w
 nnoremap w b
 nnoremap 3 I#<ESC>
 nnoremap 7 I//<ESC>
-nnoremap <C-h> {
-nnoremap <C-l> }
 nnoremap U <C-r>
 
-nnoremap <C-H> <C-w>h
-nnoremap <C-J> <C-w>j
-nnoremap <C-K> <C-w>k
-nnoremap <C-L> <C-w>l
-nnoremap <C-V> <C-w>v
+nnoremap <C-h> {
+nnoremap <C-l> }
 
 nnoremap M :make<bar>cw<cr>
 
