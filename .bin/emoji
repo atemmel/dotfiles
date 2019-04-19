@@ -1,0 +1,10 @@
+#!/bin/bash
+
+selection=$(grep -v "#" ~/.bin/.emoji-db | rofi -dmenu -i -p "emojis")
+
+[ -z "$selection" ] && exit 1
+
+char=$(echo "$selection" | tr -d [:print:])
+
+echo "$char" | xclip -selection clipboard
+echo "$char" | xclip

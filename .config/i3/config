@@ -197,6 +197,8 @@ bindsym Mod1+Control+p exec --no-startup-id flameshot gui
 
 bindsym Mod1+c exec --no-startup-id $browser
 
+bindsym Mod1+Control+e exec --no-startup-id $HOME/.bin/emoji
+
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 925 700
 for_window [instance="dropdown"] move scratchpad
