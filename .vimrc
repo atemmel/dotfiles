@@ -24,7 +24,7 @@ filetype plugin indent on
 
 set number
 set scrolloff=7
-"set ts=4 sw=4
+set ts=4 sw=4
 "set cc=80
 
 nnoremap Q <nop>
@@ -36,6 +36,7 @@ nnoremap K O
 nnoremap q :q <CR>
 nnoremap W :w <CR>
 nnoremap E :find<SPACE>
+nnoremap <C-e> :e<SPACE>
 nnoremap e w
 vnoremap e w
 nnoremap w b
@@ -86,6 +87,7 @@ fun! Start()
 
 	" Set some options for this buffer to make sure that does not act like a
 	" normal winodw.
+	file Home
 	setlocal
 		\ bufhidden=wipe
 		\ buftype=nofile
