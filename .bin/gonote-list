@@ -1,0 +1,6 @@
+#!/bin/sh
+sel=$(ls ~/.notes | rofi -dmenu -p "Select file to read notes from")
+
+[ -z "$sel" ] && exit 1
+
+notify-send "$(gonote -l "$sel")"

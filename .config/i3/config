@@ -56,11 +56,6 @@ bindsym Mod1+v split v
 # enter fullscreen mode for the focused container
 bindsym Mod1+Shift+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
-
 # toggle tiling / floating
 bindsym Mod1+Shift+space floating toggle
 
@@ -171,8 +166,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id unclutter --timeout 1 --ignore-scrolling &
 
-exec --no-startup-id dunst &
-
 exec --no-startup-id flameshot &
 
 bindsym Mod1+shift+d exec --no-startup-id $HOME/.bin/docs
@@ -187,7 +180,7 @@ bindsym Mod1+f exec --no-startup-id $terminal -e $HOME/.bin/spider
 
 bindsym Mod1+p exec --no-startup-id scrot
 
-bindsym Mod1+n exec --no-startup-id $HOME/.bin/headers
+bindsym Mod1+Control+h exec --no-startup-id $HOME/.bin/headers
 
 bindsym Mod1+x exec --no-startup-id $HOME/.bin/shutdownmenu
 
@@ -199,6 +192,9 @@ bindsym Mod1+c exec --no-startup-id $browser
 
 bindsym Mod1+Control+e exec --no-startup-id $HOME/.bin/emoji
 
+bindsym Mod1+N exec --no-startup-id $HOME/.bin/gonote-list
+bindsym Mod1+shift+N exec --no-startup-id $HOME/.bin/gonote-append
+
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 925 700
 for_window [instance="dropdown"] move scratchpad
@@ -208,6 +204,10 @@ bindsym Mod1+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 
 assign [class="(?i)$browser"] 2
 assign [class="(?i)discord"] 5
+assign [class="(?i)steam"] 6
+assign [class="(?i)skyrim"] 6
+
+bindsym Mod1+s exec --no-startup-id $HOME/.bin/skyrim-launch
 
 bindsym Mod1+i exec --no-startup-id i3lock-fancy
 

@@ -96,6 +96,7 @@ font-2 = mplus Nerd Font:style=Medium:size=16;3
 font-3 = siji:pixelsize=16;1
 
 modules-center = title
+modules-right = notes
 
 [module/title]
 type = internal/xwindow
@@ -107,6 +108,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /mnt/data
 
 label-mounted = %free%
 label-mounted-foreground = ${colors.foreground}
@@ -202,6 +204,14 @@ label-underline = ${colors.foreground}
 label = %output%
 interval = 180
 click-left = ~/.bin/weather-medium
+
+[module/notes]
+type = custom/script
+exec = ls ~/.notes/
+label-underline = ${colors.foreground}
+label = %output%
+interval = 180
+click-left = ~/.bin/gonote-list
 
 [module/cpu]
 type = internal/cpu

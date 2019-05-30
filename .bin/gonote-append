@@ -1,0 +1,10 @@
+#!/bin/sh
+sel=$(ls ~/.notes | rofi -dmenu -p "Select file to append note to")
+
+[ -z "$sel" ] && exit 1
+
+note=$(rofi -dmenu -input /dev/null -p "Write note")
+
+[ -z "$note" ] && exit 1
+
+gonote -a "$note" "$sel"

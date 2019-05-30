@@ -1,0 +1,2 @@
+#!/bin/sh
+wine /mnt/data/games/loot/LOOT.exe --no-sandbox
