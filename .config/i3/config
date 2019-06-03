@@ -201,6 +201,7 @@ for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $terminal -name dropdown
 
 bindsym Mod1+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym Mod1+shift+u exec --no-startup-id $terminal -name dropdown
 
 assign [class="(?i)$browser"] 2
 assign [class="(?i)discord"] 5
