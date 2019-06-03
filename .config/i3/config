@@ -208,6 +208,7 @@ assign [class="(?i)steam"] 6
 assign [class="(?i)skyrim"] 6
 
 bindsym Mod1+s exec --no-startup-id $HOME/.bin/skyrim-launch
+bindsym Mod1+shift+s exec --no-startup-id pkill -9 TESV.exe
 
 bindsym Mod1+i exec --no-startup-id i3lock-fancy
 
