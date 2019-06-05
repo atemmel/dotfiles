@@ -207,7 +207,7 @@ click-left = ~/.bin/weather-medium
 
 [module/notes]
 type = custom/script
-exec = ls ~/.notes/
+exec = echo "$(ls -S --color=never -m ~/.notes/ )"
 label-underline = ${colors.foreground}
 label = %output%
 interval = 180
