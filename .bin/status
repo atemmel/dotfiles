@@ -1,5 +1,4 @@
 #!/bin/sh
 who -a
 printf "\n\e[1m%s\e[0m processes running\n\n" $(ps -aux | wc -l)
-wc -l ~/.notes/* | awk -F ' '  '{s+=$1} END {print "\033[1m", s "\033[0m note(s)"}'
-printf "\n"
+wc -l ~/.notes/* 2> /dev/null | awk -F ' '  'BEGIN{s=0} {s+=$1} END {if(s>0) print "\033[1m", s "\033[0m note(s)\n"}'
