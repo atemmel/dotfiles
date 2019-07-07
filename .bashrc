@@ -14,8 +14,8 @@ shopt -s autocd
 
 alias v='nvim'
 alias c='clear'
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lha'
 
 export PATH=$PATH:~/.bin/
 export PS1='[\W]$ '
