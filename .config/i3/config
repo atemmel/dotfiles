@@ -195,6 +195,8 @@ bindsym Mod1+Control+e exec --no-startup-id $HOME/.bin/emoji
 bindsym Mod1+N exec --no-startup-id $HOME/.bin/gonote-list
 bindsym Mod1+shift+N exec --no-startup-id $HOME/.bin/gonote-append
 
+for_window [instance="visual-novel"] floating enable
+
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 925 700
 for_window [instance="dropdown"] move scratchpad

@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 "set path+=**
 set path=.,,**
-set wildignore+=.git,.git/*,*.o
+set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*
 
 call vundle#begin()
 

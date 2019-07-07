@@ -39,8 +39,8 @@ modules-left = i3
 modules-center = mpd
 modules-right = updates filesystem memory cpu wlan eth battery temperature weather date 
 
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -200,6 +200,7 @@ interval = 180
 [module/weather]
 type = custom/script
 exec = ~/.bin/weather
+;exec = echo "WTR"
 label-underline = ${colors.foreground}
 label = %output%
 interval = 180
