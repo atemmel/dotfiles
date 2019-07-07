@@ -1,0 +1,6 @@
+#!/bin/sh
+rompath="$HOME/Documents/roms"
+cd "$rompath"
+file=$(ls *.7z *.nds | rofi -dmenu -i -p "Select rom to start")
+[ "$file" ] || exit 0
+retroarch --libretro /home/temmel/Documents/roms/cores/desmume_libretro.so ./"$file" > /dev/null 2>&1
