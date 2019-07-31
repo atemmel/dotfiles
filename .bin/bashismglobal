@@ -1,0 +1,3 @@
+#!/bin/sh
+gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' /usr/bin/* \
+	| xargs -0 checkbashisms
