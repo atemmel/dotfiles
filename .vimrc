@@ -43,6 +43,7 @@ nnoremap w b
 vnoremap w b
 nnoremap 3 I#<ESC>
 nnoremap 7 I//<ESC>
+nnoremap 2 I"<ESC>
 nnoremap U <C-r>
 
 nnoremap <C-h> {
