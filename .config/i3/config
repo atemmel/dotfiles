@@ -154,7 +154,7 @@ bindsym Mod1+r mode "resize"
 #	tray_output none
 #}
 
-exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id compton
 
 exec --no-startup-id  mpd
 
