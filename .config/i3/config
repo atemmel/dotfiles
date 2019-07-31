@@ -154,7 +154,7 @@ bindsym Mod1+r mode "resize"
 #	tray_output none
 #}
 
-exec --no-startup-id compton --xrender-sync-fence -C -G
+exec --no-startup-id compton --xrender-sync-fence
 
 exec --no-startup-id  mpd
 
@@ -212,6 +212,8 @@ assign [class="(?i)skyrim"] 6
 
 bindsym Mod1+s exec --no-startup-id $HOME/.bin/skyrim-launch
 bindsym Mod1+shift+s exec --no-startup-id pkill -9 TESV.exe
+
+bindsym Mod1+shift+v exec --no-startup-id $HOME/.bin/vortex-launch
 
 bindsym Mod1+i exec --no-startup-id i3lock-fancy
 
