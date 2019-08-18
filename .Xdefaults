@@ -4,10 +4,11 @@
 
 URxvt.scrollBar: false
 #URxvt.font: xft:scientifica:size=8:style=regular, xft:mplus Nerd Font:size=10:style=regular
-URxvt.font: xft:mono:size=9:style=regular, xft:mplus Nerd Font:size=10:style=regular
+URxvt.font: xft:inconsolata:size=11:style=regular, xft:mplus Nerd Font:size=10:style=regular
 #URxvt*letterSpace: 1 
 #URxvt.depth: 32
 URxvt.intensityStyles: false
+URxvt.internalBorder: 8;
 
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,resize-font

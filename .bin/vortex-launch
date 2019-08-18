@@ -1,0 +1,2 @@
+#!/bin/sh
+wine /home/temmel/data/games/Vortex/Vortex.exe
