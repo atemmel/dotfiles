@@ -203,7 +203,7 @@ exec = ~/.bin/weather
 ;exec = echo "WTR"
 label-underline = ${colors.foreground}
 label = %output%
-interval = 180
+interval = 360
 click-left = ~/.bin/weather-medium
 
 [module/notes]

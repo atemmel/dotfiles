@@ -156,7 +156,7 @@ bindsym Mod1+r mode "resize"
 
 exec --no-startup-id compton
 
-exec --no-startup-id  mpd
+exec --no-startup-id mpd
 
 exec --no-startup-id sh /home/temmel/.fehbg 
 
