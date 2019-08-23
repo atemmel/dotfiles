@@ -19,6 +19,7 @@ call vundle#end()
 syntax on
 
 colorscheme wal
+highlight Comment cterm=italic gui=italic
 
 filetype plugin indent on
 
