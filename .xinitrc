@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 export VISUAL=nvim
 export EDITOR=$visual
 export TERMCMD=urxvt
