@@ -51,3 +51,6 @@ alt + S
 
 alt + i
 	i3lock-fancy
+
+XF86MonBrightness{Up,Down}
+	xbacklight {-inc,-dec} 2

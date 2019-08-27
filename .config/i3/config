@@ -167,6 +167,3 @@ smart_gaps on
 #smart_borders on
 
 #for_window [class="^.*"] border pixel 0
-
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
