@@ -6,5 +6,5 @@ echo "$choice"
 case $choice in
 	shutdown) shutdown -P now;;
 	reboot) shutdown -r now;;
-	logout) i3-msg exit;;
+	logout) i3-msg exit || wmevent exit;;
 esac

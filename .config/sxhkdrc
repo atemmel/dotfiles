@@ -10,7 +10,7 @@ alt + D
 alt + y
 	~/.bin/playclip
 
-alt + m
+alt + M
 	$TERMCMD -e ncmpcpp
 
 alt + f
@@ -54,3 +54,21 @@ alt + i
 
 XF86MonBrightness{Up,Down}
 	xbacklight {-inc,-dec} 2
+
+alt + {w, e}
+	wmevent {focusnext, focusprev}
+
+alt + {h, j, k ,l}
+	wmevent go {left, down, up, right}
+
+alt + shift + {h, j, k ,l}
+	wmevent move {left, down, up, right}
+
+alt + q
+	wmevent kill
+
+alt + m
+	wmevent zoom
+
+alt + shift + e
+	wmevent exit
