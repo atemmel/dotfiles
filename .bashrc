@@ -16,6 +16,7 @@ alias v='nvim'
 alias c='clear'
 alias ll='ls -lh'
 alias la='ls -lha'
+alias pls='sudo'
 
 export PATH=$PATH:~/.bin/
 export PS1='[\W]$ '
