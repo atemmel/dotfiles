@@ -2,9 +2,10 @@
 cache=~/.cache/weather
 curl -s wttr.in > "$cache"
 if grep -q "502" "$cache" ; then
+	curl -s wttr.in/?format=2 | sed 's/[^[:alnum:]_-_+_°_/]/ /g' | awk '{printf("%s, %s%s", $1, $2, $3)}'
 	exit 1
 fi
-[ -s "$cache" ] && exit 1
+[ -s "$cache" ] || exit 1
 cp ~/.cache/weather ~/.cache/weather-parseable
 sed -i 's,\x1B\[[0-9;]*[a-zA-Z],\ ,g' ~/.cache/weather-parseable
 curl -s wttr.in/?format=2 | sed 's/[^[:alnum:]_-_+_°_/]/ /g' | awk '{printf("%s, %s%s", $1, $2, $3)}'

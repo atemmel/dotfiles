@@ -18,6 +18,7 @@ alias ll='ls -lh'
 alias la='ls -lha'
 
 export PATH=$PATH:~/.bin/
+export PATH=$PATH:~/go/bin/
 export PS1='[\W]$ '
 export BROWSER=firefox
 export EDITOR=nvim

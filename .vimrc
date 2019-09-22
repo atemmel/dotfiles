@@ -2,7 +2,6 @@ set nocompatible
 filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-"set path+=**
 set path=.,,**
 set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*
 
@@ -31,6 +30,8 @@ set ts=4 sw=4
 nnoremap Q <nop>
 nnoremap <SPACE> <nop>
 
+nnoremap j gj
+nnoremap k gk
 nnoremap H K
 nnoremap J o
 nnoremap K O
