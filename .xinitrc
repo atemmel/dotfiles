@@ -9,11 +9,12 @@ xset +fp ~/.local/share/fonts &
 
 compton &
 mpd &
-~/.fehbg &
-wal -R -n &
-~/.config/polybar/launch.sh &
+~/.fehbg
+wal -R -n
 unclutter --timeout 1 --ignore scrolling &
 flameshot &
 sxhkd -c ~/.config/sxhkdrc &
+~/.config/polybar/launch.sh
 
-exec i3
+#exec i3
+exec wm > wm.log
