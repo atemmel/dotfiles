@@ -13,8 +13,8 @@ mpd &
 wal -R -n
 unclutter --timeout 1 --ignore scrolling &
 flameshot &
-sxhkd -c ~/.config/sxhkdrc &
+
+sxhkd -c ~/.config/binds.$1 &
 ~/.config/polybar/launch.sh
 
-#exec i3
-exec wm > wm.log
+exec $1
