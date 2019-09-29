@@ -47,7 +47,7 @@ alt + s
 	~/.bin/skyrim-launch
 
 alt + S
-	pkill -9 TESV.exe
+	~/.bin/skyrim-kill
 
 alt + i
 	i3lock-fancy
