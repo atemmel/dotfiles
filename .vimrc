@@ -9,9 +9,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'aurieh/discord.nvim'
-
 Plugin 'dylanaraps/wal.vim'
+
+Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 
@@ -26,6 +26,25 @@ set number
 set scrolloff=7
 set ts=4 sw=4
 "set cc=80
+
+"COC
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+
+" Use <c-space> to trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Navigate with tab and s-tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"COC
 
 nnoremap Q <nop>
 nnoremap <SPACE> <nop>

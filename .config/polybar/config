@@ -87,7 +87,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /mnt/data
+;mount-1 = /mnt/data
 
 label-mounted = %free%
 label-mounted-foreground = ${colors.foreground}
