@@ -1,0 +1,22 @@
+#!/bin/sh
+builddir="build"
+name=${PWD##*/}
+contents="cmake_minimum_required(VERSION 3.10)
+project($name)
+file(GLOB_RECURSE SOURCES RELATIVE \${CMAKE_SOURCE_DIR} \"./*.cpp\")
+add_executable($name main.cpp)
+set_property(TARGET $name PROPERTY CXX_STANDARD 17)
+
+#Optional:
+#include_directories(include)
+#target_link_libraries(lang LLVM)
+"
+main="#include <iostream>
+
+int main() {
+
+}"
+echo "$main" > main.cpp
+echo "$contents" > CMakeLists.txt
+cmake -H. -B"$builddir" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+ln -s "$builddir"/compile_commands.json .
