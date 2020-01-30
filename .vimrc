@@ -13,6 +13,8 @@ Plugin 'dylanaraps/wal.vim'
 
 Plugin 'neoclide/coc.nvim'
 
+Plugin 'aurieh/discord.nvim'
+
 call vundle#end()
 
 syntax on
@@ -70,7 +72,7 @@ nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
 
-nnoremap M :make<bar>cw<cr>
+nnoremap M :make -C build<bar>cw<cr>
 
 vmap <S-c> "+y
 
