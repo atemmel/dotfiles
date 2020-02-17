@@ -65,7 +65,8 @@ vnoremap e w
 nnoremap w b
 vnoremap w b
 nnoremap 3 I#<ESC>
-nnoremap 7 I//<ESC>
+"nnoremap 7 I//<ESC>
+nnoremap 7 :call Comment()<CR>
 nnoremap 2 I"<ESC>
 nnoremap U <C-r>
 
@@ -145,3 +146,20 @@ endfun
 if argc() == 0
 	autocmd VimEnter * call Start()
 endif
+
+fun! Comment()
+	let prefix = strpart(trim(getline('.')), 0, 2)
+	if prefix ==# "//"
+		call UndoComment()
+	else
+		call DoComment()
+	endif
+endfun
+
+fun! DoComment()
+	execute ":silent! normal ^i//\<ESC>==\^"
+endfun
+
+fun! UndoComment()
+    execute ":silent! normal :nohlsearch\<CR>:s/\\/\\///\<CR>:nohlsearch\<CR>=="
+endfun
