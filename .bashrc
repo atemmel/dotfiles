@@ -16,6 +16,7 @@ alias v='nvim'
 alias c='clear'
 alias ll='ls -lh'
 alias la='ls -lha'
+alias gs='git status'
 alias pls='sudo'
 alias here='pwd | xclip -selection clipboard'
 

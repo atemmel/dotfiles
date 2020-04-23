@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 set path=.,,**
 set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*
+set nrformats+=alpha
 
 call vundle#begin()
 
@@ -14,6 +15,8 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'neoclide/coc.nvim'
 
 Plugin 'aurieh/discord.nvim'
+
+Plugin 'salsifis/vim-transpose'
 
 call vundle#end()
 
@@ -163,3 +166,6 @@ endfun
 fun! UndoComment()
     execute ":silent! normal :nohlsearch\<CR>:s/\\/\\///\<CR>:nohlsearch\<CR>=="
 endfun
+
+"Hmm...
+"au BufRead,BufNewFile *.scp set filetype=scp

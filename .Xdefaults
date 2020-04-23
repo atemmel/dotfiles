@@ -1,6 +1,6 @@
 URxvt.scrollBar: false
 #URxvt.font: xft:scientifica:size=8:style=regular, xft:mplus Nerd Font:size=10:style=regular
-URxvt.font: xft:inconsolata:size=11:style=regular, xft:mplus Nerd Font:size=10:style=regular
+URxvt.font: xft:inconsolata nerd font:size=11:style=regular, xft:mplus Nerd Font:size=10:style=regular
 #URxvt*letterSpace: 1 
 URxvt.intensityStyles: false
 URxvt.internalBorder: 8;
