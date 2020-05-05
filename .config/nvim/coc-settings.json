@@ -10,5 +10,17 @@
 				}
 			}
 		}
-	}
+	},
+
+	"languageserver": {
+		"flow": {
+		  "command": "flow",
+		  "args": ["lsp"],
+		  "filetypes": ["javascript", "javascriptreact"],
+		  "initializationOptions": {},
+		  "requireRootPattern": true,
+		  "settings": {},
+		  "rootPatterns": [".flowconfig"]
+		}
+  }
 }

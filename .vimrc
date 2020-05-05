@@ -76,7 +76,8 @@ nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
 
-nnoremap M :make -C build<bar>cw<cr>
+"nnoremap M :make -C build<bar>cw<cr>
+nnoremap M :make <bar>cw<cr>
 
 vmap <S-c> "+y
 
