@@ -77,6 +77,9 @@ nnoremap <C-h> {
 nnoremap <C-l> }
 
 "nnoremap M :make -C build<bar>cw<cr>
+if !exists("current_compiler")
+	set makeprg=make\ -C\ build
+end
 nnoremap M :make <bar>cw<cr>
 
 vmap <S-c> "+y
