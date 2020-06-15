@@ -19,6 +19,7 @@ alias la='ls -lha'
 alias gs='git status'
 alias pls='sudo'
 alias here='pwd | xclip -selection clipboard'
+alias go-release='go build -ldflags "-s -w"'
 
 export PATH=$PATH:~/.bin/
 export PATH=$PATH:~/go/bin/

@@ -76,11 +76,13 @@ nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
 
+autocmd Filetype gh setlocal makeprg=ghoul\ build\ %
 "nnoremap M :make -C build<bar>cw<cr>
 if !exists("current_compiler")
 	set makeprg=make\ -C\ build
 end
 nnoremap M :make <bar>cw<cr>
+
 
 vmap <S-c> "+y
 

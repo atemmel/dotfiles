@@ -5,7 +5,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # autostart systemd default session on tty1
-if [[ "$(tty)" == '/dev/tty1' ]]; then
+if [[ -z $DISPLAY ]] && [[ "$(tty)" == '/dev/tty1' ]]; then
 	wm=(i3 pad)
 	choice=
 

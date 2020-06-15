@@ -8,11 +8,12 @@
 				"cache": {
 					"directory": ".ccls-cache"
 				}
+			},
+			"client": {
+				"snippetsupport": true
 			}
-		}
-	},
+		},
 
-	"languageserver": {
 		"flow": {
 		  "command": "flow",
 		  "args": ["lsp"],
@@ -22,5 +23,6 @@
 		  "settings": {},
 		  "rootPatterns": [".flowconfig"]
 		}
-  }
+	}
 }
+
