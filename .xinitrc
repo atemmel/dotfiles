@@ -1,7 +1,8 @@
 #!/bin/sh
 export VISUAL=nvim
 export EDITOR=$visual
-export TERMCMD=urxvt
+#export TERMCMD=urxvt
+export TERMCMD=alacritty
 export BROWSER=firefox
 
 systemctl --user import-environment DISPLAY

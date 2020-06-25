@@ -20,6 +20,7 @@ alias gs='git status'
 alias pls='sudo'
 alias here='pwd | xclip -selection clipboard'
 alias go-release='go build -ldflags "-s -w"'
+alias go-release-win='env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"'
 
 export PATH=$PATH:~/.bin/
 export PATH=$PATH:~/go/bin/
