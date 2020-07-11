@@ -10,7 +10,7 @@ font:
     italic:
         family: Inconsolata Nerd Font
         style: Italic
-    size: 9
+        size: 11.5
 
 window:
     padding:
