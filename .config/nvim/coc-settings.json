@@ -15,14 +15,22 @@
 		},
 
 		"flow": {
-		  "command": "flow",
-		  "args": ["lsp"],
-		  "filetypes": ["javascript", "javascriptreact"],
-		  "initializationOptions": {},
-		  "requireRootPattern": true,
-		  "settings": {},
-		  "rootPatterns": [".flowconfig"]
+			"command": "flow",
+			"args": ["lsp"],
+			"filetypes": ["javascript", "javascriptreact"],
+			"initializationOptions": {},
+			"requireRootPattern": true,
+			"settings": {},
+			"rootPatterns": [".flowconfig"]
+		},
+
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"],
+			"initializationOptions": {
+				"usePlaceholders": true
+			}
 		}
 	}
 }
-
