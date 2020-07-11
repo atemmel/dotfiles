@@ -14,7 +14,7 @@ alt + M
 	$TERMCMD -e ncmpcpp
 
 alt + f
-	$TERMCMD -e bash -c -i ~/.bin/spider
+	$TERMCMD -e ~/.bin/spider
 
 alt + p
 	scrot
