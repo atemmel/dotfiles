@@ -21,7 +21,7 @@ set $down j
 set $left h
 set $right l
 
-set $terminal urxvt
+set $terminal alacritty
 set $browser firefox
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
@@ -144,19 +144,22 @@ bindsym Mod1+r mode "resize"
 
 for_window [instance="visual-novel"] floating enable
 
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 925 700
-for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $terminal -name dropdown
+#exec --no-startup-id $terminal -name dropdown
+exec --no-startup-id $terminal --class dropdown
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
-bindsym Mod1+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-bindsym Mod1+shift+u exec --no-startup-id $terminal -name dropdown
+for_window [instance="dropdown"] floating enable, resize set 925 700, move scratchpad
+
+bindsym Mod1+u [instance="dropdown"] scratchpad show, move position center
+bindsym Mod1+shift+u exec --no-startup-id $terminal --class dropdown
+#bindsym Mod1+shift+u exec --no-startup-id $terminal -name dropdown
 
 assign [class="(?i)$browser"] 2
 assign [class="(?i)discord"] 5
 assign [class="(?i)steam"] 6
 assign [class="(?i)skyrim"] 6
+
+for_window [class="Spotify"] move to workspace 4
 
 bindsym Mod1+shift+v exec --no-startup-id $HOME/.bin/vortex-launch
 
