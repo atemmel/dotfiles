@@ -49,6 +49,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Navigate with tab and s-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nmap <silent> gd <Plug>(coc-definition)
+autocmd CursorHold * silent call CocActionAsync('highlight')
+nmap cn <Plug>(coc-rename)
 "COC
 
 nnoremap Q <nop>
@@ -81,6 +84,7 @@ autocmd Filetype gh setlocal makeprg=ghoul\ build\ %
 if !exists("current_compiler")
 	set makeprg=make\ -C\ build
 end
+
 nnoremap M :make <bar>cw<cr>
 
 
