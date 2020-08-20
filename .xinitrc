@@ -12,8 +12,9 @@ compton &
 mpd &
 ~/.fehbg
 wal -R -n
-unclutter --timeout 1 --ignore scrolling &
+unclutter --timeout 1 --ignore-scrolling &
 flameshot &
+headsetcontrol -s 80
 
 sxhkd -c ~/.config/binds.$1 &
 ~/.config/polybar/launch.sh
