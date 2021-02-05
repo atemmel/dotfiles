@@ -1,0 +1,2 @@
+#!/bin/sh
+xrandr --auto --output DP2 --right-of eDP1 

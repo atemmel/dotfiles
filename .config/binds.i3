@@ -57,3 +57,6 @@ XF86MonBrightness{Up,Down}
 
 alt + shift + e
 	wmevent exit
+
+alt + m
+	~/.bin/monitors.sh

@@ -3,7 +3,7 @@
 		"ccls": {
 			"command": "ccls",
 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootpatterns": [".ccls-root", "compile_commands.json"],
+			"rootpatterns": [".ccls", "compile_commands.json"],
 			"initializationOptions": {
 				"cache": {
 					"directory": ".ccls-cache"
@@ -32,5 +32,13 @@
 				"usePlaceholders": true
 			}
 		}
+	},
+	"java.configuration.runtimes": [
+	{
+		"name": "JavaSE-14",
+		"path": "/path/to/jdk-14",
+		"default": true
 	}
+  ],
+  "java.format.settings.url": "/home/temmel/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }

@@ -37,13 +37,15 @@ modules-right = updates filesystem memory cpu wlan eth battery temperature weath
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-format <label-indicator>
+format = <label-indicator>
 
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.foreground}
 
 label-layout = %layout%
 label-layout-underline = ${colors.foreground}
+
+;label-padding = 2
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -104,6 +106,8 @@ padding = 2
 label-active-padding = ${self.padding}
 label-empty = W%name%
 label-empty-padding = ${self.padding}
+label-occupied-padding = ${self.padding}
+label-occupied = W%name%
 
 
 [module/mpd]
