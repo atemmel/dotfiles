@@ -2,18 +2,14 @@
 	"languageserver": {
 		"ccls": {
 			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootpatterns": [".ccls", "compile_commands.json"],
+			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
 			"initializationOptions": {
 				"cache": {
-					"directory": ".ccls-cache"
+					"directory": "/tmp/ccls"
 				}
-			},
-			"client": {
-				"snippetsupport": true
 			}
 		},
-
 		"flow": {
 			"command": "flow",
 			"args": ["lsp"],
@@ -31,7 +27,15 @@
 			"initializationOptions": {
 				"usePlaceholders": true
 			}
-		}
+		},
+		"digestif": {
+			"command": "digestif",
+			"filetypes": ["tex", "plaintex", "context"]
+		},
+		"zls" : {
+           "command": "zls",
+           "filetypes": ["zig"]
+       }
 	},
 	"java.configuration.runtimes": [
 	{

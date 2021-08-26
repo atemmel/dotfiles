@@ -1,5 +1,6 @@
 #!/bin/sh
 targetresolution="1920x1080"
+#targetresolution="1280x720"
 
 choice=$(echo -e "left\nright\ntop\nmirror" | rofi -dmenu -i -p "Use external monitor as")
 [ -z "$choice" ] && exit 0

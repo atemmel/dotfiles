@@ -8,15 +8,14 @@ export BROWSER=firefox
 systemctl --user import-environment DISPLAY
 xset +fp ~/.local/share/fonts &
 
-compton &
-mpd &
+#compton &
 ~/.fehbg
 wal -R -n
 unclutter --timeout 1 --ignore-scrolling &
 flameshot &
 headsetcontrol -s 80
 
-sxhkd -c ~/.config/binds.$1 &
+sxhkd -c ~/.config/binds.i3 &
 ~/.config/polybar/launch.sh
 
-exec $1
+exec i3

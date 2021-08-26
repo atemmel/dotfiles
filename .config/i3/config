@@ -161,6 +161,8 @@ assign [class="(?i)skyrim"] 6
 
 for_window [class="Spotify"] move to workspace 4
 
+for_window [class="matplotlib"] floating enable
+
 bindsym Mod1+shift+v exec --no-startup-id $HOME/.bin/vortex-launch
 
 #exec setxkbmap -option caps:escape

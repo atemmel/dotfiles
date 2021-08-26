@@ -14,7 +14,7 @@ Plugin 'dylanaraps/wal.vim'
 
 Plugin 'neoclide/coc.nvim'
 
-Plugin 'aurieh/discord.nvim'
+"Plugin 'aurieh/discord.nvim'
 
 Plugin 'salsifis/vim-transpose'
 
@@ -78,6 +78,8 @@ nnoremap U <C-r>
 
 nnoremap <C-h> {
 nnoremap <C-l> }
+
+inoremap <C-o> )
 
 autocmd Filetype gh setlocal makeprg=ghoul\ build\ %
 "nnoremap M :make -C build<bar>cw<cr>
