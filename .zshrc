@@ -27,6 +27,15 @@ alias go-release='go build -ldflags "-s -w"'
 alias go-release-win='env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"'
 alias go-release-mac='env GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w"'
 
+#git() {
+	#echo "$@"
+	#if [[$1 == "commit"]] && [[$2 == "suicide"]] ; then
+		#command git reset --hard
+	#else
+		#command git $@
+	#fi
+#}
+
 export PATH=$PATH:~/.bin/
 export PATH=$PATH:~/go/bin/
 export BROWSER=firefox
@@ -34,4 +43,7 @@ export EDITOR=nvim
 export TERM=xterm-256color
 export PROMPT='%(?.√.?%?) %1~ %# '
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"

@@ -3,7 +3,7 @@ filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 set path=.,,**
-set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class,**/zig-cache/**,**/zig-out/**
+set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class,*.aux,*.bbl,*.bcf,*.log,*.out,*.pdf,bin/**,**/zig-out/**,**/zig-cache/**
 set nrformats+=alpha
 
 call vundle#begin()
@@ -13,6 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dylanaraps/wal.vim'
 
 Plugin 'neoclide/coc.nvim'
+
+"Plugin 'aurieh/discord.nvim'
 
 Plugin 'salsifis/vim-transpose'
 
@@ -81,6 +83,8 @@ nnoremap U <C-r>
 
 nnoremap <C-h> {
 nnoremap <C-l> }
+
+inoremap <C-o> )
 
 autocmd Filetype gh setlocal makeprg=ghoul\ build\ %
 "nnoremap M :make -C build<bar>cw<cr>

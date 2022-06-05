@@ -7,5 +7,17 @@ killall -q polybar
 while pgrep -u $UID polybar >/dev/null; do sleep 1; done
 
 #polybar example -r &
-polybar main &
-polybar lower &
+if type "xrandr"; then
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		MONITOR=$m polybar main &
+		MONITOR=$m polybar lower &
+		break
+	done
+else
+	polybar main &
+	polybar lower &
+fi
+
+# Old
+#polybar main &
+#polybar lower &

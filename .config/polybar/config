@@ -6,6 +6,7 @@ foreground = ${xrdb:color7:#222}
 alert = #bd2c40
 
 [bar/main]
+monitor = ${env:MONITOR}
 width = 100%
 height = 17
 fixed-center = true
@@ -24,7 +25,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = scientifica:fixed:pixelsize=11;1
+font-0 = scientifica:fixed:pixelsize=10;1
 font-1 = mplus Nerd Font:style=Medium:size=15;3
 font-2 = mplus Nerd Font:style=Medium:size=16;3
 font-3 = siji:pixelsize=16;1
@@ -38,6 +39,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 ;format <label-indicator>
+format = <label-indicator>
 
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.foreground}
@@ -45,12 +47,15 @@ format-prefix-underline = ${colors.foreground}
 label-layout = %layout%
 label-layout-underline = ${colors.foreground}
 
+;label-padding = 2
+
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.foreground}
 label-indicator-underline = ${colors.foreground}
 
 [bar/lower]
+monitor = ${env:MONITOR}
 bottom = true
 width = 100%
 height = 17
@@ -104,6 +109,8 @@ padding = 2
 label-active-padding = ${self.padding}
 label-empty = W%name%
 label-empty-padding = ${self.padding}
+label-occupied-padding = ${self.padding}
+label-occupied = W%name%
 
 
 [module/mpd]

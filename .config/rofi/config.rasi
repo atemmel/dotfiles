@@ -1,0 +1,8 @@
+configuration {
+	font: "scientifica 8";
+	fixed-num-lines: true;
+	location: 2;
+	/*padding: 5;*/
+}
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"

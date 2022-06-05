@@ -162,6 +162,10 @@ assign [class="(?i)skyrim"] 6
 
 for_window [class="Spotify"] move to workspace 4
 
+for_window [class="matplotlib"] floating enable
+
+for_window [class="feh"] floating enable
+
 bindsym Mod1+shift+v exec --no-startup-id $HOME/.bin/vortex-launch
 
 for_window [instance="chat"] sticky enable

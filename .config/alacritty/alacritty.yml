@@ -12,7 +12,6 @@ font:
         family: scientifica
         style: Italic
         size: 11
-
 window:
     padding:
         x: 8
