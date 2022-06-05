@@ -1,0 +1,5 @@
+#!/bin/sh
+IP=$(rofi -dmenu -i -p "Write IP of cam")
+[ -z "$IP" ] && exit 0
+droidcam-cli -vflip -hflip -nocontrols "$IP" "4747"
+#droidcam-cli -vflip -nocontrols "$IP" "4747"
