@@ -32,12 +32,12 @@ font-3 = siji:pixelsize=16;1
 ;modules-left = i3
 modules-left = xworkspaces
 modules-center = mpd
-modules-right = updates filesystem memory cpu wlan eth battery temperature weather date 
+modules-right = updates strim filesystem memory cpu wlan eth battery temperature weather date 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-format <label-indicator>
+;format <label-indicator>
 
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.foreground}
@@ -132,6 +132,13 @@ exec = ~/.bin/countupdates
 label-underline = ${colors.foreground}
 label = %output% PKG
 interval = 180
+
+[module/strim]
+type = custom/script
+exec = ~/.bin/twitch-viewers
+label-underline = ${colors.foreground}
+label = %output% viewers
+interval = 10
 
 [module/weather]
 type = custom/script

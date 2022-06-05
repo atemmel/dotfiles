@@ -142,7 +142,8 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-for_window [instance="visual-novel"] floating enable
+for_window [title="^pok$"] floating enable
+for_window [title="^poked$"] floating enable
 
 #exec --no-startup-id $terminal -name dropdown
 exec --no-startup-id $terminal --class dropdown
@@ -162,6 +163,9 @@ assign [class="(?i)skyrim"] 6
 for_window [class="Spotify"] move to workspace 4
 
 bindsym Mod1+shift+v exec --no-startup-id $HOME/.bin/vortex-launch
+
+for_window [instance="chat"] sticky enable
+for_window [instance="chat"] floating enable, resize set 925 700
 
 #exec setxkbmap -option caps:escape
 

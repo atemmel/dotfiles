@@ -1,20 +1,22 @@
 #!/bin/sh
 export VISUAL=nvim
-export EDITOR=$visual
+export EDITOR=$VISUAL
 #export TERMCMD=urxvt
-export TERMCMD=alacritty
+export TERMCMD=kitty
 export BROWSER=firefox
 
 systemctl --user import-environment DISPLAY
 xset +fp ~/.local/share/fonts &
 
-compton &
 mpd &
 ~/.fehbg
 wal -R -n
+
+# Temporary
+~/.bin/walfix
 unclutter --timeout 1 --ignore-scrolling &
 flameshot &
-headsetcontrol -s 80
+headsetcontrol -s 100
 
 sxhkd -c ~/.config/binds.$1 &
 ~/.config/polybar/launch.sh

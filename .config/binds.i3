@@ -1,5 +1,8 @@
 alt + Return
-	$TERMCMD
+	$TERMCMD 
+
+alt + Return + shift
+	~/.bin/bigterm
 
 alt + d
 	rofi -show run

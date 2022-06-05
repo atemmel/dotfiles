@@ -1,0 +1,2 @@
+#!/bin/sh
+$TERMCMD --class="chat" sh -c "bork start"

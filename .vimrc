@@ -3,7 +3,7 @@ filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 set path=.,,**
-set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class
+set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class,**/zig-cache/**,**/zig-out/**
 set nrformats+=alpha
 
 call vundle#begin()
@@ -13,8 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dylanaraps/wal.vim'
 
 Plugin 'neoclide/coc.nvim'
-
-Plugin 'aurieh/discord.nvim'
 
 Plugin 'salsifis/vim-transpose'
 
@@ -45,6 +43,11 @@ inoremap <silent><expr> <Tab>
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Navigate with tab and s-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

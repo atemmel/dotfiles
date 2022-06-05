@@ -1,7 +1,7 @@
 #rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
-#rofi.font: scientifica 8
-rofi.font: monospace 12
+rofi.font: scientifica
+#rofi.font: monospace 12
 rofi.lines: 20
 rofi.location: 2
-rofi.padding: 5
+#rofi.padding: 5

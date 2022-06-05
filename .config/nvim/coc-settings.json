@@ -1,19 +1,5 @@
 {
 	"languageserver": {
-		"ccls": {
-			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootpatterns": [".ccls-root", "compile_commands.json"],
-			"initializationOptions": {
-				"cache": {
-					"directory": ".ccls-cache"
-				}
-			},
-			"client": {
-				"snippetsupport": true
-			}
-		},
-
 		"flow": {
 			"command": "flow",
 			"args": ["lsp"],
@@ -31,6 +17,10 @@
 			"initializationOptions": {
 				"usePlaceholders": true
 			}
+		},
+		"zls" : {
+		  "command": "zls",
+		  "filetypes": ["zig"]
 		}
 	}
 }

@@ -1,0 +1,6 @@
+#!/bin/sh
+SINK_ID=$(pactl load-module module-null-sink | tail -c "+2" "-")
+pactl load-module module-combine-sink slaves="$SINK_ID",alsa_output.usb-Corsair_Corsair_VOID_PRO_Wireless_Gaming_Headset-00.analog-stereo
+#c ; ttchat -c qwarten
+
+#$TERMCMD --class="bork" sh -c "bork start"

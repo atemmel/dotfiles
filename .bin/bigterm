@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+$TERMCMD \
+	--override "font_size=16"
+	#-o "font.normal.family=Inconsolata Nerd Font" \
+	#-o "font.bold.family=Inconsolata Nerd Font" \
+	#-o "font.italic.family=Inconsolata Nerd Font" \
+	#-o "font.size=16"

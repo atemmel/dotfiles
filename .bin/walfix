@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FIX_STR="element-text, element-icon {\
+    background-color: inherit;\
+    text-color:       inherit;\
+}\
+"
+
+TARGET_FILE=~/.cache/wal/colors-rofi-dark.rasi
+
+echo "$FIX_STR" >> "$TARGET_FILE"

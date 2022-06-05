@@ -1,0 +1,2 @@
+#!/bin/sh
+unclutter -idle 0.0001 --start-hidden --jitter 999999 --ignore-scrolling --ignore-buttons 1,2,3~ &

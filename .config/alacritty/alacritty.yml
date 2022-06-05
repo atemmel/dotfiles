@@ -1,16 +1,17 @@
 font:
     normal:
-        #family: Inconsolata Nerd Font
-        #family: Inconsolata
-        family: Inconsolata Nerd Font
+      #family: Inconsolata Nerd Font
+        family: scientifica
         style: Regular
     bold:
-        family: Inconsolata Nerd Font
+      #family: Inconsolata Nerd Font
+        family: scientifica
         style: Bold
     italic:
-        family: Inconsolata Nerd Font
+      #family: Inconsolata Nerd Font
+        family: scientifica
         style: Italic
-        size: 11.5
+        size: 11
 
 window:
     padding:
