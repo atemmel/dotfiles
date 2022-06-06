@@ -3,7 +3,7 @@ filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 set path=.,,**
-set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class
+set wildignore+=.git,.git/*,*.o,**/node_modules/**,*/build/*,*.png,*.jpg,go.sum,*.mp3,*.ttf,*.zip,*.exe,**/output/**,*.class,*.aux,*.bbl,*.bcf,*.log,*.out,*.pdf,bin/**,**/zig-out/**,**/zig-cache/**
 set nrformats+=alpha
 
 call vundle#begin()
