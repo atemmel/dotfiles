@@ -3,14 +3,27 @@
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'.zls.setup{}
+local on_attach = function()
+	vim.keymap.set("n", "H", vim.lsp.buf.hover, {buffer=0})
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
+	vim.keymap.set("n", "cn", vim.lsp.buf.rename, {buffer=0})
+end
+
+require'lspconfig'.zls.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
 require'lspconfig'.gopls.setup{
 	capabilities = capabilities,
-	on_attach = function()
-		vim.keymap.set("n", "H", vim.lsp.buf.hover, {buffer=0})
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-		vim.keymap.set("n", "cn", vim.lsp.buf.rename, {buffer=0})
-	end,
+	on_attach = on_attach,
+}
+require'lspconfig'.clangd.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+require'lspconfig'.sumneko_lua.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 local has_words_before = function()
@@ -20,6 +33,10 @@ end
 
 local cmp = require'cmp'
 local luasnip = require'luasnip'
+
+--local telescope = require'telescope'
+-- telescope.setup{
+-- }
 
 cmp.setup({
 	snippet = {
@@ -40,7 +57,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s" }),
+		end, { "i", "s", "c" }),
 		['<S-Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()

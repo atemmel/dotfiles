@@ -13,9 +13,11 @@ Plugin 'hrsh7th/cmp-cmdline'
 Plugin 'hrsh7th/cmp-path'
 Plugin 'L3MON4D3/LuaSnip'
 Plugin 'ziglang/zig.vim'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-treesitter/nvim-treesitter'
 
 call vundle#end()
-
 
 set number
 set scrolloff=7
@@ -33,7 +35,6 @@ else
 	colorscheme wal
 endif
 
-
 nnoremap Q <nop>
 nnoremap <SPACE> <nop>
 
@@ -43,7 +44,8 @@ nnoremap J o
 nnoremap K O
 nnoremap q :q <CR>
 nnoremap W :w <CR>
-nnoremap E :find<SPACE>
+"nnoremap E :find<SPACE>
+nnoremap E <cmd>Telescope find_files theme=dropdown<cr>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
 vnoremap e w
