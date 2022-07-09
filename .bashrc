@@ -21,8 +21,10 @@ alias pls='sudo'
 alias here='pwd | xclip -selection clipboard'
 alias go-release='go build -ldflags "-s -w"'
 alias go-release-win='env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"'
-alias go-release-mac='env GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w"'
+alias go-release-mac='env GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w"'
+alias go-release-mac-old='env GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w"'
 alias kitty='GLFW_IM_MODULE=none kitty'
+alias yank='history | tail -2 | head -1 | sed "s/\ \ [0-9]*\ \ \(.*\)/\1/" | xclip -selection clipboard'
 
 export PATH=$PATH:~/.bin/
 export PATH=$PATH:~/go/bin/

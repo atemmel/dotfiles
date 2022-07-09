@@ -16,6 +16,7 @@ Plugin 'ziglang/zig.vim'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
+Plugin 'andweeb/presence.nvim'
 
 call vundle#end()
 
