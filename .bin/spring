@@ -1,0 +1,139 @@
+#!/bin/sh
+
+function spring() {
+
+    function die() {
+        echo $1 && exit 1
+    }
+
+    PROJECT_ROOT="."
+
+    while [ ! -f "$PROJECT_ROOT/pom.xml" ] ; do
+        PROJECT_ROOT="$PROJECT_ROOT/.."
+        [ -d "$PROJECT_ROOT" ] || die "Could not find project root"
+    done
+
+    PKG_BASE=$(grep "groupId.*se" "$PROJECT_ROOT/pom.xml" | head -n 1 | sed 's/\s*<groupId>\(.*\)<\/groupId>/\1/g')
+    if command -v wslpath &> /dev/null
+    then
+        WIN_PWD=$(wslpath -w "$(pwd)")
+    else
+        WIN_PWD="."
+    fi
+    CMD="$1"
+    shift;
+
+    OUT_DIR="$PROJECT_ROOT"
+
+    function help() {
+        echo "spring help
+  run                runs the current project
+  test               runs all tests belonging to the current project
+  test <name>        runs test with name <name>
+  controller <name>  creates controller with name <name>
+  repository <name>  creates repository with name <name>
+  repo <name>        -\"-
+"
+    }
+
+    function set_out_dir() {
+        [ -d "$OUT_DIR/src" ] && OUT_DIR="$OUT_DIR/src"
+        [ -d "$OUT_DIR/main" ] && OUT_DIR="$OUT_DIR/main"
+        [ -d "$OUT_DIR/java" ] && OUT_DIR="$OUT_DIR/java"
+
+        [ "$OUT_DIR" == "." ] && return
+
+        ROOT=$(ls "$OUT_DIR" | head -n 1)
+        [ -z "$ROOT" ] && return
+        OUT_DIR="$OUT_DIR/$ROOT"
+
+        DOMAIN=$(ls "$OUT_DIR" | head -n 1)
+        [ -z "$DOMAIN" ] && return
+        OUT_DIR="$OUT_DIR/$DOMAIN"
+
+        SUBDOMAIN=$(ls "$OUT_DIR" | head -n 1)
+        [ -z "$SUBDOMAIN" ] && return
+        OUT_DIR="$OUT_DIR/$SUBDOMAIN"
+
+        PKG_BASE="${ROOT}.${DOMAIN}.${SUBDOMAIN}"
+    }
+
+    function run() {
+        if [ -z "$USE_POSH" ] ; then
+            sh $@
+        else
+            powershell.exe "cd ${WIN_PWD};" $@
+        fi
+    }
+
+    [ -z $JAVA_PROFILE ] || PROFILE="'-Dspring-boot.${CMD}.profiles=${JAVA_PROFILE}'"
+    if [ "$CMD" == "run" ] ; then 
+        run mvn "spring-boot:run" ${@} ${PROFILE}
+    elif [ "$CMD" == "test" ] ; then
+        TO_RUN=""
+        if [ -z $1 ] ; then
+            echo Running all tests
+        else 
+            TO_RUN="-Dtest=$1"
+            shift;
+        fi
+        run mvn "test" ${TO_RUN} ${@}
+    elif [ "$CMD" == "controller" ] ; then
+        [ -z $1 ] && die "No name of controller specified"
+
+        set_out_dir
+
+        CONTROLLER_DIR="."
+
+        if [ -d "$OUT_DIR/controller" ] ; then
+            CONTROLLER_DIR="controller"
+            PKG_BASE="${PKG_BASE}.controller"
+        elif [ -d "$OUT_DIR/controllers" ] ; then
+            CONTROLLER_DIR="controllers"
+            PKG_BASE="${PKG_BASE}.controllers"
+        fi
+
+        CONTROLLER_NAME="${1}Controller"
+        CONTROLLER_TEMPLATE="package $PKG_BASE;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class $CONTROLLER_NAME {
+
+}"
+        echo "$CONTROLLER_TEMPLATE" > "$OUT_DIR/$CONTROLLER_DIR/${CONTROLLER_NAME}.java"
+    elif [ "$CMD" == "repository" ] || [ "$CMD" == "repo" ] ; then
+        [ -z $1 ] && die "No name of repository specified"
+
+        set_out_dir
+
+        REPO_DIR="."
+
+        if [ -d "$OUT_DIR/repository" ] ; then
+            CONTROLLER_DIR="repository"
+            PKG_BASE="${PKG_BASE}.repository"
+        elif [ -d "$OUT_DIR/repositories" ] ; then
+            CONTROLLER_DIR="repositories"
+            PKG_BASE="${PKG_BASE}.repositories"
+        fi
+
+        NAME="$1"
+        REPO_NAME="${NAME}Repository"
+        REPO_TEMPLATE="package $PKG_BASE;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface $REPO_NAME extends CrudRepository<${NAME}Entity, Long> {
+
+}"
+        echo "$REPO_TEMPLATE" > "$OUT_DIR/$REPO_DIR/${REPO_NAME}.java"
+    else
+        help
+        die "Help shown above"
+    fi
+}
+
+spring $@

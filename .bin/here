@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if command -v clip.exe &> /dev/null
+then
+	pwd | clip.exe
+else
+	pwd | xclip -selection clipboard
+fi

@@ -36,6 +36,11 @@ else
 	colorscheme wal
 endif
 
+autocmd Filetype ts setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype vue setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 nnoremap Q <nop>
 nnoremap <SPACE> <nop>
 
@@ -46,7 +51,9 @@ nnoremap K O
 nnoremap q :q <CR>
 nnoremap W :w <CR>
 "nnoremap E :find<SPACE>
-nnoremap E <cmd>Telescope find_files theme=dropdown<cr>
+"nnoremap E <cmd>Telescope find_files theme=dropdown<cr>
+nnoremap E :lua require'picker'.fd()<cr>
+nnoremap fw <cmd>Telescope live_grep<cr>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
 vnoremap e w
@@ -55,6 +62,7 @@ vnoremap w b
 nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
+nnoremap <C-r> :source ~/.config/nvim/init.vim<cr>
 
 vmap <S-c> "+y
 

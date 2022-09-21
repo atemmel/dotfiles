@@ -25,6 +25,27 @@ require'lspconfig'.sumneko_lua.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
+require'lspconfig'.jdtls.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+require'lspconfig'.volar.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = {
+		'typescript',
+		'javascript',
+		'javascript-react',
+		'typescript-react',
+		'vue',
+		'json',
+	},
+	init_options = {
+		typescript = {
+			serverpath = '/usr/lib/node_modules/typescript/lib/tsserverlibrary.js',
+		},
+	},
+}
 
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
@@ -60,22 +81,28 @@ local cmp = require'cmp'
 local luasnip = require'luasnip'
 
 local ignore = {
-    ".git",
-    ".git/*",
+	".jar",
+	".properties",
+	"package.json",
+	"package-lock.json",
+	".ico",
+	".idea",
+	".vscode",
+	"target/",
+    ".git/",
     "*.o",
-    "**/node_modules/**",
-    "*/build/*",
-    "*.png",
-    "*.jpg",
+    "node_modules",
+    "build",
+    ".png",
+    ".jpg",
     "go.sum",
-    "*.mp3",
-    "*.ttf",
-    "*.zip",
-    "*.exe",
-    "**/output/**",
-    "*.class",
-    "**/zig-cache/**",
-    "**/zig-out/**",
+    ".mp3",
+    ".ttf",
+    ".zip",
+    ".exe",
+    ".class",
+    "zig-cache",
+    "zig-out",
 }
 
 local telescope = require'telescope'
