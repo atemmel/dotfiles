@@ -54,6 +54,7 @@ nnoremap W :w <CR>
 "nnoremap E <cmd>Telescope find_files theme=dropdown<cr>
 nnoremap E :lua require'picker'.fd()<cr>
 nnoremap fw <cmd>Telescope live_grep<cr>
+nnoremap yh :!~/.bin/here<cr>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
 vnoremap e w

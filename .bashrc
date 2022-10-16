@@ -8,7 +8,10 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-(cat ~/.cache/wal/sequences &)
+if [ -f ~/.cache/wal/sequences ]
+then
+	(cat ~/.cache/wal/sequences &)
+fi
 
 shopt -s autocd
 

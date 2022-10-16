@@ -101,8 +101,8 @@ local ignore = {
     ".zip",
     ".exe",
     ".class",
-    "zig-cache",
-    "zig-out",
+    "zig-cache/",
+    "zig-out/",
 }
 
 local telescope = require'telescope'
