@@ -32,13 +32,17 @@ if exists('g:neovide')
 	let g:neovide_remember_window_size = v:true
 	let g:neovide_input_use_logo = v:true
 	let g:neovide_cursor_vfx_mode = "wireframe"
+	let g:terminal_color_0 = '#304050'
+	let g:terminal_color_1 = '#e8ecf0'
+	let g:terminal_color_3 = '#FFFF80'
+	nnoremap tT :!cmd.exe /C start wt.exe -d $(pwd)<cr>
 else
 	colorscheme wal
 endif
 
+autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype ts setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype vue setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 nnoremap Q <nop>
@@ -50,11 +54,11 @@ nnoremap J o
 nnoremap K O
 nnoremap q :q <CR>
 nnoremap W :w <CR>
-"nnoremap E :find<SPACE>
-"nnoremap E <cmd>Telescope find_files theme=dropdown<cr>
 nnoremap E :lua require'picker'.fd()<cr>
 nnoremap fw <cmd>Telescope live_grep<cr>
 nnoremap yh :!~/.bin/here<cr>
+nnoremap tt :term<CR>
+tnoremap <C-w> <C-\><C-n>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
 vnoremap e w

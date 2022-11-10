@@ -24,6 +24,13 @@ require'lspconfig'.clangd.setup{
 require'lspconfig'.sumneko_lua.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	},
 }
 require'lspconfig'.jdtls.setup{
 	capabilities = capabilities,
@@ -101,8 +108,8 @@ local ignore = {
     ".zip",
     ".exe",
     ".class",
-    "zig-cache/",
-    "zig-out/",
+    "zig-cache",
+    "zig-out",
 }
 
 local telescope = require'telescope'
