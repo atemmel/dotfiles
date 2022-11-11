@@ -21,7 +21,7 @@ set $down j
 set $left h
 set $right l
 
-set $terminal alacritty
+set $terminal kitty
 set $browser firefox
 
 # use Mouse+Mod1 to drag floating windows to their wanted position

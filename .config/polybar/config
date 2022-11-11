@@ -135,26 +135,26 @@ bar-progress-empty = %{T4}█%{T-}
 
 [module/updates]
 type = custom/script
-exec = ~/.bin/countupdates
+exec = ~/bin/countupdates
 label-underline = ${colors.foreground}
 label = %output% PKG
 interval = 180
 
 [module/strim]
 type = custom/script
-exec = ~/.bin/twitch-viewers
+exec = ~/bin/twitch-viewers
 label-underline = ${colors.foreground}
 label = %output% viewers
 interval = 10
 
 [module/weather]
 type = custom/script
-exec = ~/.bin/weather
+exec = ~/bin/weather
 ;exec = echo "WTR"
 label-underline = ${colors.foreground}
 label = %output%
 interval = 360
-click-left = ~/.bin/weather-medium
+click-left = ~/bin/weather-medium
 
 [module/notes]
 type = custom/script
@@ -162,7 +162,7 @@ exec = echo "$(ls -S --color=never -m ~/.notes/ )"
 label-underline = ${colors.foreground}
 label = %output%
 interval = 180
-click-left = ~/.bin/gonote-list
+click-left = ~/bin/gonote-list
 
 [module/cpu]
 type = internal/cpu

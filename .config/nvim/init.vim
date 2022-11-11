@@ -79,7 +79,7 @@ end
 nnoremap M :make <bar>cw<cr>
 
 fun! Logo()
-	let splash = readfile($HOME ."/.bin/gengar")
+	let splash = readfile($HOME ."/bin/gengar")
 	let y = (winheight(0) - len(splash)) / 2
 	let x = (winwidth(0) - len(splash[0])) / 2
 

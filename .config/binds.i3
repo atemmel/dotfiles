@@ -2,16 +2,16 @@ alt + Return
 	$TERMCMD 
 
 alt + Return + shift
-	~/.bin/bigterm
+	~/bin/bigterm
 
 alt + d
 	rofi -show run
 
 alt + D
-	~/.bin/docs
+	~/bin/docs
 
 alt + y
-	~/.bin/playclip
+	~/bin/playclip
 
 alt + M
 	$TERMCMD -e ncmpcpp
@@ -23,34 +23,34 @@ alt + p
 	scrot
 
 alt + P
-	~/.bin/roms
+	~/bin/roms
 
 alt + control + p
 	flameshot gui
 
 alt + control + h
-	~/.bin/headers
+	~/bin/headers
 
 alt + x
-	~/.bin/shutdownmenu
+	~/bin/shutdownmenu
 
 alt + c
 	"$BROWSER"
 
 alt + control + e
-	~/.bin/emoji
+	~/bin/emoji
 
 alt + n
-	~/.bin/gonote-list
+	~/bin/gonote-list
 
 alt + N
-	~/.bin/gonote-append
+	~/bin/gonote-append
 
 alt + s
-	~/.bin/skyrim-launch
+	~/bin/skyrim-launch
 
 alt + S
-	~/.bin/skyrim-kill
+	~/bin/skyrim-kill
 
 alt + i
 	i3lock-fancy
@@ -59,7 +59,7 @@ XF86MonBrightness{Up,Down}
 	xbacklight {-inc,-dec} 2
 
 alt + shift + e
-	wmevent exit
+	i3-msg exit
 
 alt + m
-	~/.bin/monitors.sh
+	~/bin/monitors.sh

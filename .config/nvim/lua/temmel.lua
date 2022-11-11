@@ -1,7 +1,7 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
 	vim.keymap.set("n", "H", vim.lsp.buf.hover, {buffer=0})
