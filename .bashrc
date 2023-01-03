@@ -11,6 +11,7 @@ PS1='[\u@\h \W]\$ '
 if [ -f ~/.cache/wal/sequences ]
 then
 	(cat ~/.cache/wal/sequences &)
+	~/bin/walfix
 fi
 
 shopt -s autocd
@@ -35,10 +36,6 @@ export PS1='[\W]$ '
 export BROWSER=firefox
 export EDITOR=nvim
 export TERM=xterm-256color
-
-# job related
-#export USE_POSH="Y"
-#export JAVA_PROFILE=""
 
 if command -v pyenv &> /dev/null
 then

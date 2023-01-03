@@ -1,7 +1,6 @@
 #!/bin/sh
 export VISUAL=nvim
 export EDITOR=$VISUAL
-#export TERMCMD=urxvt
 export TERMCMD=kitty
 export BROWSER=firefox
 

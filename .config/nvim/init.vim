@@ -56,8 +56,9 @@ nnoremap q :q <CR>
 nnoremap W :w <CR>
 nnoremap E :lua require'picker'.fd()<cr>
 nnoremap fw <cmd>Telescope live_grep<cr>
-nnoremap yh :!~/.bin/here<cr>
-nnoremap tt :term<CR>
+nnoremap yh :!~/bin/here<cr><cr>
+nnoremap tt :term<CR><CR>a<C-l>
+nnoremap ts :term<CR><CR>aspider<cr>
 tnoremap <C-w> <C-\><C-n>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
@@ -68,6 +69,7 @@ nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
 nnoremap <C-r> :source ~/.config/nvim/init.vim<cr>
+nnoremap cv :e ~/.config/nvim/<cr>
 
 vmap <S-c> "+y
 

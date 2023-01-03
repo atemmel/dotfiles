@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f $HOME/.bashrc ]] && . $HOME/.bashrc
 
 # autostart systemd default session on tty1
 if [[ -z $DISPLAY ]] && [[ "$(tty)" == '/dev/tty1' ]]; then
@@ -24,5 +24,6 @@ if [[ -z $DISPLAY ]] && [[ "$(tty)" == '/dev/tty1' ]]; then
 		#esac
 	#done
 
-	exec startx ~/.xinitrc i3
+	#exec startx "$HOME/.xinitrc i3"
+	exec startx
 fi

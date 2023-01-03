@@ -1,6 +1,8 @@
 {
 	"binds": {
 		"u": "git clone $(xclip -o)",
-		"y": "echo %F | xclip -selection clipboard"
-	}
+		"y": "echo %F | xclip -selection clipboard",
+		"v": "vh"
+	},
+	"drawBg": false
 }
