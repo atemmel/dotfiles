@@ -63,3 +63,6 @@ alt + shift + e
 
 alt + m
 	~/bin/monitors.sh
+
+alt + o
+	tmenu -dir ~/doc -command $HOME/bin/open-project project

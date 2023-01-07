@@ -150,6 +150,7 @@ exec --no-startup-id $terminal --class dropdown
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 for_window [instance="dropdown"] floating enable, resize set 925 700, move scratchpad
+for_window [class="floating_window"] floating enable, resize set 925 700 position center
 
 bindsym Mod1+u [instance="dropdown"] scratchpad show, move position center
 bindsym Mod1+shift+u exec --no-startup-id $terminal --class dropdown
