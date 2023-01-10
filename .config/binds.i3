@@ -1,13 +1,10 @@
 alt + Return
 	$TERMCMD 
 
-alt + Return + shift
-	~/bin/bigterm
-
 alt + d
 	rofi -show run
 
-alt + D
+alt + Shift + d
 	~/bin/docs
 
 alt + y
@@ -22,7 +19,7 @@ alt + f
 alt + p
 	scrot
 
-alt + P
+alt + shift + p
 	~/bin/roms
 
 alt + control + p
@@ -43,13 +40,13 @@ alt + control + e
 alt + n
 	~/bin/gonote-list
 
-alt + N
+alt + shift + n
 	~/bin/gonote-append
 
 alt + s
 	~/bin/skyrim-launch
 
-alt + S
+alt + shift + s
 	~/bin/skyrim-kill
 
 alt + i
