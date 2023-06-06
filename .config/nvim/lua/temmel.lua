@@ -21,7 +21,7 @@ require'lspconfig'.clangd.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require'lspconfig'.sumneko_lua.setup{
+require'lspconfig'.lua_ls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -88,26 +88,26 @@ local cmp = require'cmp'
 local luasnip = require'luasnip'
 
 local ignore = {
-	".jar",
-	".properties",
-	"package.json",
-	"package-lock.json",
-	".ico",
-	".idea",
+	"%.ico",
+	"%.idea",
+	"%.jar",
+	"%.properties",
 	".vscode",
+	"package-lock.json",
+	"package.json",
 	"target/",
-    ".git/",
-    "*.o",
-    "node_modules",
-    "build",
-    ".png",
-    ".jpg",
+    "%.class",
+    "%.exe",
+    "%.git/",
+    "%.jpg",
+    "%.mp3",
+    "%.o",
+    "%.png",
+    "%.ttf",
+    "%.zip",
+    "build/",
     "go.sum",
-    ".mp3",
-    ".ttf",
-    ".zip",
-    ".exe",
-    ".class",
+    "node_modules",
     "zig-cache",
     "zig-out",
 }
