@@ -110,6 +110,7 @@ local ignore = {
     "node_modules",
     "zig-cache",
     "zig-out",
+    "vendor/",
 }
 
 local telescope = require'telescope'
