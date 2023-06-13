@@ -8,8 +8,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-if [ -f ~/.cache/wal/sequences ]
-then
+if [ -f ~/.cache/wal/sequences ] ; then
 	(cat ~/.cache/wal/sequences &)
 	~/bin/walfix
 fi
@@ -37,8 +36,7 @@ export BROWSER=firefox
 export EDITOR=nvim
 export TERM=xterm-256color
 
-if command -v pyenv &> /dev/null
-then
+if command -v pyenv &> /dev/null ; then
 	eval "$(pyenv init -)"
 fi
 
