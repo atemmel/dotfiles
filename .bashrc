@@ -13,6 +13,12 @@ if [ -f ~/.cache/wal/sequences ] ; then
 	~/bin/walfix
 fi
 
+if [ -e /mnt/c ] ; then
+	alias vh='neovide.exe --wsl .'
+else
+	alias vh='nvim .'
+fi
+
 shopt -s autocd
 
 alias v='nvim'

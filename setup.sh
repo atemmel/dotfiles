@@ -44,6 +44,7 @@ wsl_install () {
 	powershell.exe -File wsl/setup.ps1
 
 	rm $WIN_BIN/*.zip
+	chmod +x $WIN_BIN/*
 
 }
 
