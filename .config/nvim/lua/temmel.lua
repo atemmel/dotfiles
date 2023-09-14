@@ -88,10 +88,13 @@ local cmp = require'cmp'
 local luasnip = require'luasnip'
 
 local ignore = {
+	"%.asset",
 	"%.ico",
 	"%.idea",
 	"%.jar",
+	"%.meta",
 	"%.properties",
+	"%.unity",
 	".vscode",
 	"package-lock.json",
 	"package.json",
