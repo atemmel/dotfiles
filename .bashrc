@@ -14,7 +14,7 @@ if [ -f ~/.cache/wal/sequences ] ; then
 fi
 
 if [ -e /mnt/c ] ; then
-	alias vh='neovide.exe --wsl . &'
+	alias vh='(neovide.exe --wsl . &)'
 else
 	alias vh='nvim .'
 fi
