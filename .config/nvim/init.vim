@@ -17,6 +17,7 @@ Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
 Plugin 'andweeb/presence.nvim'
+Plugin 'folke/neodev.nvim'
 
 call vundle#end()
 

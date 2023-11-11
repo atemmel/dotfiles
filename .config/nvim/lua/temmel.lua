@@ -9,6 +9,9 @@ local on_attach = function()
 	vim.keymap.set("n", "cn", vim.lsp.buf.rename, {buffer=0})
 end
 
+require("statusline")
+require("neodev").setup({})
+
 require'lspconfig'.zls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -27,9 +30,9 @@ require'lspconfig'.lua_ls.setup{
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { 'vim' }
-			}
-		}
+				globals = { 'vim' },
+			},
+		},
 	},
 }
 require'lspconfig'.jdtls.setup{
