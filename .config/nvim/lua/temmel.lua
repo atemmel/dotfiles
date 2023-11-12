@@ -1,8 +1,6 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
-require 'mason'.setup()
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
@@ -11,7 +9,10 @@ local on_attach = function()
 	vim.keymap.set("n", "cn", vim.lsp.buf.rename, { buffer = 0 })
 end
 
-require 'lspconfig'.zls.setup {
+require("statusline")
+require("neodev").setup({})
+
+require'lspconfig'.zls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
@@ -23,15 +24,15 @@ require 'lspconfig'.clangd.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require 'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { 'vim' }
-			}
-		}
+				globals = { 'vim' },
+			},
+		},
 	},
 }
 require 'lspconfig'.pyright.setup {
@@ -123,26 +124,39 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
 local ignore = {
+	"%.asset",
 	"%.class",
 	"%.exe",
 	"%.git",
+	"%.git/",
 	"%.ico",
 	"%.idea",
 	"%.jar",
 	"%.jpg",
+	"%.jpg",
 	"%.json",
+	"%.meta",
 	"%.mp3",
 	"%.o",
 	"%.png",
+	"%.properties",
 	"%.ttf",
+	"%.unity",
 	"%.vscode",
 	"%.woff2",
 	"%.zip",
+	".vscode",
 	"build/",
 	"go.sum",
+	"node_modules",
 	"node_modules/",
+	"package-lock.json",
+	"package.json",
 	"target/",
+	"vendor/",
+	"zig-cache",
 	"zig-cache/",
+	"zig-out",
 	"zig-out/",
 }
 

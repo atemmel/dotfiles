@@ -1,0 +1,13 @@
+bash-completion
+clang
+curl
+go
+gopls
+jq
+lua-language-server
+neovim
+ripgrep
+tree
+unzip
+bat
+valgrind

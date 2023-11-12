@@ -1,0 +1,13 @@
+#!/bin/sh
+
+path=$1
+
+[ -z $path ] && echo "No path specified, exiting" && exit 1
+
+# Find out which of these two commands is the more appealing one
+cd $path || exit 2
+$TERMCMD -e $SHELL &
+
+#$TERMCMD -e nvim $path &
+# Demo command
+#$TERMCMD --class "[floating]" -e nvim $path &

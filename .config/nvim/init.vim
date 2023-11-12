@@ -8,6 +8,7 @@ Plugin 'MunifTanjim/prettier.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'andweeb/presence.nvim'
 Plugin 'dylanaraps/wal.vim'
+Plugin 'folke/neodev.nvim'
 Plugin 'hrsh7th/cmp-buffer'
 Plugin 'hrsh7th/cmp-cmdline'
 Plugin 'hrsh7th/cmp-nvim-lsp'
@@ -18,8 +19,6 @@ Plugin 'neovim/nvim-lspconfig'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
-Plugin 'williamboman/mason.nvim'
-Plugin 'ziglang/zig.vim'
 
 call vundle#end()
 

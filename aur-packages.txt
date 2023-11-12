@@ -1,0 +1,3 @@
+scc
+bat
+zig-dev-bin
