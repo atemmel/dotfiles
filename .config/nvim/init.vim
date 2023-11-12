@@ -3,20 +3,23 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 
 call vundle#begin()
 
+Plugin 'L3MON4D3/LuaSnip'
+Plugin 'MunifTanjim/prettier.nvim'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'andweeb/presence.nvim'
 Plugin 'dylanaraps/wal.vim'
-Plugin 'neovim/nvim-lspconfig'
-Plugin 'hrsh7th/nvim-cmp'
-Plugin 'hrsh7th/cmp-nvim-lsp'
 Plugin 'hrsh7th/cmp-buffer'
 Plugin 'hrsh7th/cmp-cmdline'
+Plugin 'hrsh7th/cmp-nvim-lsp'
 Plugin 'hrsh7th/cmp-path'
-Plugin 'L3MON4D3/LuaSnip'
-Plugin 'ziglang/zig.vim'
+Plugin 'hrsh7th/nvim-cmp'
+Plugin 'jose-elias-alvarez/null-ls.nvim'
+Plugin 'neovim/nvim-lspconfig'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
-Plugin 'andweeb/presence.nvim'
+Plugin 'williamboman/mason.nvim'
+Plugin 'ziglang/zig.vim'
 
 call vundle#end()
 
@@ -35,18 +38,33 @@ if exists('g:neovide')
 	let g:terminal_color_0 = '#304050'
 	let g:terminal_color_1 = '#e8ecf0'
 	let g:terminal_color_3 = '#FFFF80'
-	nnoremap tT :!cmd.exe /C start wt.exe -d $(pwd)<cr>
+	nnoremap tT :!cmd.exe /C start wt.exe -d $(pwd)<cr><cr>
+	au FileType netrw nmap <buffer> tT :!cmd.exe /C start wt.exe -d $(pwd)<cr><cr>
+
+	let g:neovide_scale_factor=1.0
+	function! ChangeScaleFactor(delta)
+		let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+	endfunction
+
+	function! ResetScaleFactor()
+		let g:neovide_scale_factor = 1.0
+	endfunction
+
+	nnoremap <expr>s+ ChangeScaleFactor(1.1)
+	nnoremap <expr>s- ChangeScaleFactor(1/1.1)
+	nnoremap <expr>s= ResetScaleFactor()
 else
 	colorscheme wal
 endif
 
-autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype ts setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype vue setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
+autocmd BufWritePre * lua vim.lsp.buf.format()
+
 nnoremap Q <nop>
-nnoremap <SPACE> <nop>
 
 nnoremap j gj
 nnoremap k gk
@@ -57,8 +75,11 @@ nnoremap W :w <CR>
 nnoremap E :lua require'picker'.fd()<cr>
 nnoremap fw <cmd>Telescope live_grep<cr>
 nnoremap yh :!~/bin/here<cr><cr>
+vnoremap yh :!~/bin/here<cr><cr>
 nnoremap tt :term<CR><CR>a<C-l>
-nnoremap ts :term<CR><CR>aspider<cr>
+au FileType netrw nmap <buffer> tt :term<CR><CR>a<C-l>
+"nnoremap ts :term<CR><CR>A<C-l><C-u><cr>spider<cr>
+nnoremap ts :term spider<cr>
 tnoremap <C-w> <C-\><C-n>
 nnoremap <C-e> :e<SPACE>
 nnoremap e w
@@ -69,6 +90,7 @@ nnoremap U <C-r>
 nnoremap <C-h> {
 nnoremap <C-l> }
 nnoremap <C-r> :source ~/.config/nvim/init.vim<cr>
+nnoremap <C-u> :syntax sync fromstart<cr>:setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>
 nnoremap cv :e ~/.config/nvim/<cr>
 
 vmap <S-c> "+y
@@ -79,6 +101,13 @@ if !exists("current_compiler")
 	set makeprg=make\ -C\ build
 end
 nnoremap M :make <bar>cw<cr>
+
+"set foldmethod=indent
+set foldmethod=marker fmr=//<,//>
+
+nnoremap <space> zA
+nnoremap zr zR
+nnoremap zm zM
 
 fun! Logo()
 	let splash = readfile($HOME ."/bin/gengar")
@@ -148,3 +177,4 @@ if argc() == 0
 endif
 
 lua require'temmel'
+lua require'prettiercfg'
