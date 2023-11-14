@@ -36,5 +36,8 @@ require "lazy".setup({
 })
 
 require "picker"
-require "prettiercfg"
+
+if os.execute("command -v prettierd") == 0 then
+	require "prettiercfg"
+end
 require "temmel"
