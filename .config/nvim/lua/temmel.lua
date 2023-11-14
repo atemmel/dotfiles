@@ -12,7 +12,7 @@ end
 require("statusline")
 require("neodev").setup({})
 
-require'lspconfig'.zls.setup{
+require 'lspconfig'.zls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
@@ -24,13 +24,16 @@ require 'lspconfig'.clangd.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require'lspconfig'.lua_ls.setup{
+require 'lspconfig'.lua_ls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
 				globals = { 'vim' },
+			},
+			workspace = {
+				checkThirdParty = false,
 			},
 		},
 	},
@@ -122,50 +125,6 @@ end
 
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-
-local ignore = {
-	"%.asset",
-	"%.class",
-	"%.exe",
-	"%.git",
-	"%.git/",
-	"%.ico",
-	"%.idea",
-	"%.jar",
-	"%.jpg",
-	"%.jpg",
-	"%.json",
-	"%.meta",
-	"%.mp3",
-	"%.o",
-	"%.png",
-	"%.properties",
-	"%.ttf",
-	"%.unity",
-	"%.vscode",
-	"%.woff2",
-	"%.zip",
-	".vscode",
-	"build/",
-	"go.sum",
-	"node_modules",
-	"node_modules/",
-	"package-lock.json",
-	"package.json",
-	"target/",
-	"vendor/",
-	"zig-cache",
-	"zig-cache/",
-	"zig-out",
-	"zig-out/",
-}
-
-local telescope = require 'telescope'
-telescope.setup {
-	defaults = {
-		file_ignore_patterns = ignore,
-	}
-}
 
 cmp.setup({
 	snippet = {
