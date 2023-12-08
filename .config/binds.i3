@@ -31,6 +31,9 @@ alt + control + h
 alt + x
 	~/bin/shutdownmenu
 
+alt + z
+	sxcs --mag-filters circle --color-none -q
+
 alt + c
 	"$BROWSER"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-selection=$(grep -v "#" ~/.bin/.emoji-db | rofi -dmenu -i -p "emojis")
+selection=$(grep -v "#" ~/bin/.emoji-db | rofi -dmenu -i -p "emojis")
 
 [ -z "$selection" ] && exit 1
 

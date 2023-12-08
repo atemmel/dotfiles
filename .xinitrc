@@ -17,9 +17,9 @@ unclutter --timeout 1 --ignore-scrolling &
 flameshot &
 headsetcontrol -s 100
 
-swhks &
-#sxhkd -c ~/.config/binds.i3 &
-pkexec swhkd -c ~/.config/binds.i3 &
+sxhkd -c ~/.config/binds.i3 &
+#swhks &
+#pkexec swhkd -c ~/.config/binds.i3 &
 ~/.config/polybar/launch.sh
 
 exec i3
