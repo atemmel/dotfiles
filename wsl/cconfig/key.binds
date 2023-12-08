@@ -1,0 +1,14 @@
+alt + e
+	explorer
+
+alt + return
+	wt -M
+
+alt + d
+	tmenu.exe run
+
+alt + o
+	tmenu.exe --dir \\wsl$Arch\home\temmel\doc --command C:\bin\open-project.bat project
+
+alt + shift + e
+	exit

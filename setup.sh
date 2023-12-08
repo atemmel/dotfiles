@@ -25,8 +25,12 @@ wsl_install () {
 	local TMENU_URL="https://github.com/atemmel/tmenu/releases/download/0.2.1/tmenu.zip"
 
 	local WIN_BIN="/mnt/c/bin"
+	local WIN_CONF="/mnt/c/config"
 
 	mkdir -p $WIN_BIN || die
+	mkdir -p $WIN_CONF || die
+
+	cp wsl/cconfig/* $WIN_CONF
 
 	curl $NEOVIDE_URL -L -o "$WIN_BIN/neovide.zip" || die
 	curl $KEYS_URL -L -o "$WIN_BIN/keys.zip" || die
@@ -40,6 +44,8 @@ wsl_install () {
 	powershell.exe -File wsl/setup.ps1
 
 	rm $WIN_BIN/*.zip
+	chmod +x $WIN_BIN/*
+
 }
 
 shared_install

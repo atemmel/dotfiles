@@ -13,13 +13,23 @@ if [ -f ~/.cache/wal/sequences ] ; then
 	~/bin/walfix
 fi
 
+if [ -e /mnt/c ] ; then
+	alias vh='(neovide.exe --wsl . &)'
+else
+	alias vh='nvim .'
+fi
+
 shopt -s autocd
+shopt -s globstar
 
 alias v='nvim'
 alias c='clear'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias gs='git status'
+alias gp='git pull'
+alias gc='git checkout'
+alias git-prune='git remote prune origin'
 alias pls='sudo'
 alias go-release='go build -ldflags "-s -w"'
 alias go-release-win='env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"'
@@ -40,6 +50,16 @@ if command -v pyenv &> /dev/null ; then
 	eval "$(pyenv init -)"
 fi
 
+if command -v kubectl &> /dev/null
+then
+	source <(kubectl completion bash)
+fi
+
+if [[ -e ~/.bashrc-local ]] ; then
+	source ~/.bashrc-local
+fi
+
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+export LIBGL_ALWAYS_INDIRECT=1
