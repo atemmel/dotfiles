@@ -1,6 +1,3 @@
-require "general"
-require "keybinds"
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	print("Installing Lazy...")
@@ -35,9 +32,13 @@ require "lazy".setup({
 	"nvim-treesitter/nvim-treesitter",
 })
 
+require "general"
+require "keybinds"
+
 require "picker"
 
 if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
 require "temmel"
+require "autocmd"
