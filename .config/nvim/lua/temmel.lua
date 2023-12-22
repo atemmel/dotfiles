@@ -9,7 +9,6 @@ local on_attach = function()
 	vim.keymap.set("n", "cn", vim.lsp.buf.rename, { buffer = 0 })
 end
 
-require("statusline")
 require("neodev").setup({})
 
 require 'lspconfig'.zls.setup {
@@ -93,6 +92,51 @@ require 'lspconfig'.eslint.setup({
 })
 --]]
 
+
+---@param o any
+---@param depth int
+local function dump_recurse(o, depth)
+	local pad_char = "  "
+	local padding = string.rep(pad_char, depth)
+	if type(o) == 'table' then
+		local s = '{\n'
+		for k, v in pairs(o) do
+			if type(k) ~= 'number' then k = '"' .. k .. '"' end
+			s = s .. pad_char .. padding .. '[' .. k .. '] = ' .. dump_recurse(v, depth + 1) .. ',\n'
+		end
+		return s .. padding .. '}'
+	else
+		if type(o) == 'string' then
+			return '"' .. o .. '"'
+		end
+		return tostring(o)
+	end
+end
+
+function Dump(o)
+	return dump_recurse(o, 0)
+end
+
+local signs = { Error = "\u{ea87}", Warn = "\u{e654}", Hint = "\u{f420}", Info = "\u{f449}" }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+local function setup_lsp_diags()
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+		vim.lsp.diagnostic.on_publish_diagnostics,
+		{
+			virtual_text = false,
+			signs = true,
+			update_in_insert = false,
+			underline = true,
+		}
+	)
+end
+
+setup_lsp_diags()
+
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
 	-- General options
@@ -165,3 +209,5 @@ cmp.setup({
 		{ name = 'buffer' },
 	})
 })
+
+return Dump

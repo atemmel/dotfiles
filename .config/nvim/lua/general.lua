@@ -5,4 +5,6 @@ set ts=4 sw=4
 highlight Comment cterm=italic gui=italic
 filetype plugin indent on
 colorscheme oxocarbon
+set updatetime=1000
+set updatetime=500
 ]], {})

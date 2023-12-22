@@ -40,5 +40,7 @@ require "picker"
 if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
-require "temmel"
+
+Dump = require "temmel"
+require "statusline"
 require "autocmd"
