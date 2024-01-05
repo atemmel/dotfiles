@@ -6,4 +6,6 @@ highlight Comment cterm=italic gui=italic
 filetype plugin indent on
 colorscheme oxocarbon
 colorscheme carbonfox
+set updatetime=1000
+set updatetime=500
 ]], {})

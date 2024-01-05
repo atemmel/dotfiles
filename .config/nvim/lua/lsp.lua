@@ -90,6 +90,26 @@ require 'lspconfig'.eslint.setup({
 })
 --]]
 
+local signs = { Error = "\u{ea87}", Warn = "\u{e654}", Hint = "\u{f420}", Info = "\u{f449}" }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+local function setup_lsp_diags()
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+		vim.lsp.diagnostic.on_publish_diagnostics,
+		{
+			virtual_text = false,
+			signs = true,
+			update_in_insert = false,
+			underline = true,
+		}
+	)
+end
+
+setup_lsp_diags()
+
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
 	-- General options
