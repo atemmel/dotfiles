@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require "lazy".setup({
+	"EdenEast/nightfox.nvim",
 	"L3MON4D3/LuaSnip",
 	"MunifTanjim/prettier.nvim",
 	"VundleVim/Vundle.vim",
@@ -32,6 +33,9 @@ require "lazy".setup({
 	"nvim-treesitter/nvim-treesitter",
 })
 
+require "neodev".setup({})
+
+require "statusline"
 require "general"
 require "keybinds"
 
@@ -40,5 +44,6 @@ require "picker"
 if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
-require "temmel"
+
+require "lsp"
 require "autocmd"

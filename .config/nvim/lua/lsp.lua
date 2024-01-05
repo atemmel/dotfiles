@@ -1,7 +1,6 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
---[[
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
@@ -91,7 +90,6 @@ require 'lspconfig'.eslint.setup({
 })
 --]]
 
---[[
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
 	-- General options
@@ -164,4 +162,3 @@ cmp.setup({
 		{ name = 'buffer' },
 	})
 })
---]]
