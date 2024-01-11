@@ -65,4 +65,9 @@ Picker.projects = function(dir)
 	require "projects".picker(dir, opts)
 end
 
+Picker.checkout = function()
+	local opts = center_list
+	require "telescope.builtin".git_branches(opts)
+end
+
 return Picker

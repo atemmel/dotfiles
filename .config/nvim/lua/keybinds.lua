@@ -47,7 +47,10 @@ nmap("yh", ":!~/bin/here<cr><cr>")
 nmap("<C-j>", ":lua vim.diagnostic.goto_next()<cr>")
 nmap("<C-k>", ":lua vim.diagnostic.goto_prev()<cr>")
 
-nmap("<space>p", ":lua require'picker'.projects('~/doc')<cr>")
+nmap("tp", ":lua require'picker'.projects('~/doc')<cr>")
+nmap("tgc", ":lua require'picker'.checkout()<cr>")
+-- TODO: this could be presented prettier
+nmap("gp", ":!git pull<cr>")
 
 tmap("<C-w>", "<C-\\><C-n>")
 
