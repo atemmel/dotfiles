@@ -35,7 +35,7 @@ alt + z
 	sxcs --mag-filters circle --color-none -q
 
 alt + c
-	"$BROWSER"
+	i3-msg "workspace 2; exec $BROWSER"
 
 alt + control + e
 	~/bin/emoji

@@ -156,7 +156,7 @@ bindsym Mod1+u [instance="dropdown"] scratchpad show, move position center
 bindsym Mod1+shift+u exec --no-startup-id $terminal --class dropdown
 #bindsym Mod1+shift+u exec --no-startup-id $terminal -name dropdown
 
-assign [class="(?i)$browser"] 2
+#assign [class="(?i)$browser"] 2
 assign [class="(?i)discord"] 5
 #assign [class="(?i)steam"] 6
 assign [class="(?i)skyrim"] 6

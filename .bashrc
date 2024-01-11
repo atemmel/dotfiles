@@ -15,6 +15,7 @@ fi
 
 if [ -e /mnt/c ] ; then
 	alias vh='(neovide.exe --wsl . &)'
+	export LIBGL_ALWAYS_INDIRECT=1
 else
 	alias vh='nvim .'
 fi
@@ -62,4 +63,3 @@ fi
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
-export LIBGL_ALWAYS_INDIRECT=1
