@@ -45,6 +45,8 @@ if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
 
-Dump = require "lsp"
+require "lsp"
 require "statusline"
 require "autocmd"
+Utils = require "utils"
+Projects = require "projects"

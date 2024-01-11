@@ -37,7 +37,7 @@ end
 local function filename()
 	local fname = vim.fn.expand "%:t"
 	if fname == "" then
-		return ""
+		return vim.fn.fnamemodify(vim.fn.expand "%", ":~:t")
 	end
 	return fname .. " "
 end

@@ -1,3 +1,5 @@
+Picker = {}
+
 local ignore = {
 	"%.asset",
 	"%.class",
@@ -50,11 +52,17 @@ local center_list = require "telescope.themes".get_dropdown({
 	},
 })
 
-Picker = {}
-
 Picker.fd = function()
 	local opts = center_list
 	require "telescope.builtin".fd(opts)
+end
+
+---Opens a styled picker to select git projects
+---@param dir string
+---@return table
+Picker.projects = function(dir)
+	local opts = center_list
+	require "projects".picker(dir, opts)
 end
 
 return Picker

@@ -25,7 +25,7 @@ end
 nmap("<C-e>", ":e<SPACE>")
 nmap("<C-h>", "{")
 nmap("<C-l>", "}")
-nmap("<C-r>", ":source ~/.config/nvim/init.vim<cr>")
+nmap("<C-r>", ":luafile ~/.config/nvim/init.lua<cr>")
 nmap("<C-u>", ":syntax sync fromstart<cr>:setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2<cr>")
 nmap("E", ":lua require'picker'.fd()<cr>")
 nmap("J", "o")
@@ -46,6 +46,8 @@ nmap("w", "b")
 nmap("yh", ":!~/bin/here<cr><cr>")
 nmap("<C-j>", ":lua vim.diagnostic.goto_next()<cr>")
 nmap("<C-k>", ":lua vim.diagnostic.goto_prev()<cr>")
+
+nmap("<space>p", ":lua require'picker'.projects('~/doc')<cr>")
 
 tmap("<C-w>", "<C-\\><C-n>")
 
