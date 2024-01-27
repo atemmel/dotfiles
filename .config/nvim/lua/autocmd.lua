@@ -1,5 +1,28 @@
 local au = vim.api.nvim_create_autocmd;
 
+-- TODO: this should be a set
+local prettier_files = {
+	"css",
+	"html",
+	"javascript",
+	"json",
+	"scss",
+	"typescript",
+	"vue",
+}
+
+local prettier = require "prettier"
+
+function maybe_format()
+	for _, value in pairs(prettier_files) do
+		if value == vim.bo.filetype then
+			prettier.format()
+			return
+		end
+	end
+	vim.lsp.buf.format()
+end
+
 au(
 	"Filetype",
 	{
@@ -16,11 +39,13 @@ au(
 	"Filetype",
 	{
 		pattern = {
+			"*.css",
+			"*.html",
 			"*.js",
+			"*.json",
+			"*.scss",
 			"*.ts",
 			"*.vue",
-			"*.html",
-			"*.json",
 		},
 		command = "setlocal expandtab tabstop=2, shiftwidth=2, softtabstop=2",
 	}
@@ -30,6 +55,6 @@ au(
 	"BufWritePre",
 	{
 		pattern = "*",
-		command = "lua vim.lsp.buf.format()",
+		command = "lua maybe_format()",
 	}
 )
