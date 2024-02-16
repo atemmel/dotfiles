@@ -1,19 +1,9 @@
 local utils = require "utils"
+local prettier = require("prettier")
 
 local au = vim.api.nvim_create_autocmd;
 
-au(
-	"Filetype",
-	{
-		pattern = "*.cpp",
-		command = "setlocal makeprg=cmake --build build",
-	}
-)
-
-if vim.fn.exists("current_compiler") ~= 0 then
-	vim.api.nvim_command("set makeprg=make -C build")
-end
-
+-- TODO: this should be a set
 local prettier_files = {
 	"css",
 	"html",
@@ -23,8 +13,6 @@ local prettier_files = {
 	"typescript",
 	"vue",
 }
-
-local prettier = require("prettier")
 
 local function format_xml()
 	local contents = vim.api.nvim_buf_get_lines(0, 0, -1, false)
@@ -75,3 +63,15 @@ au(
 		command = "lua Format()",
 	}
 )
+
+au(
+	"Filetype",
+	{
+		pattern = "*.cpp",
+		command = "setlocal makeprg=cmake --build build",
+	}
+)
+
+if vim.fn.exists("current_compiler") ~= 0 then
+	vim.api.nvim_command("set makeprg=make -C build")
+end
