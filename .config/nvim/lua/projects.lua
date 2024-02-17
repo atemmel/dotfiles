@@ -10,9 +10,12 @@ local action_state = require "telescope.actions.state"
 ---@param dir string
 ---@return table
 local function find(dir)
-	local cmd = "find " .. dir .. " -name .git -type d -prune | sort"
+	local cmd = "find " .. dir .. " -name node_modules -prune -o -name .git -print | sort"
 	local file = io.popen(cmd, "r")
 	local output = file:read("*a")
+	if file == nil then
+		return {}
+	end
 	local list = utils.split(output, "\n")
 	for k, v in pairs(list) do
 		list[k] = string.sub(v, 1, -6)
@@ -49,5 +52,4 @@ end
 return {
 	find = find,
 	picker = picker,
-	colors = colors,
 }

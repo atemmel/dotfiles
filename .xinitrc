@@ -1,7 +1,7 @@
 #!/bin/sh
 export VISUAL=nvim
 export EDITOR=$VISUAL
-export TERMCMD=kitty
+export TERMCMD=wezterm
 export BROWSER=firefox
 
 systemctl --user import-environment DISPLAY
