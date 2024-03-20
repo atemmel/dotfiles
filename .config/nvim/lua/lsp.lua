@@ -1,6 +1,7 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
+local home = os.getenv("HOME")
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
@@ -43,6 +44,11 @@ require 'lspconfig'.pyright.setup {
 require 'lspconfig'.jdtls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
+	init_options = {
+		jvm_args = {
+			"-javaagent:" .. home .. "/.m2/lombok.jar",
+		},
+	},
 	settings = {
 		['java'] = {
 			eclipse = {
