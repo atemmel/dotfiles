@@ -11,7 +11,6 @@ local ignore = {
 	"%.jar",
 	"%.jpg",
 	"%.jpg",
-	"%.json",
 	"%.meta",
 	"%.mp3",
 	"%.o",
