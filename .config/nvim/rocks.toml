@@ -1,0 +1,34 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.19.0" # rocks.nvim can also manage itself :D
+"rocks-git.nvim" = "1.3.0"
+nightfox = { git = "EdenEast/nightfox.nvim" }
+luasnip = { git = "L3MON4D3/LuaSnip" }
+prettier = { git = "MunifTanjim/prettier.nvim" }
+presence = { git = "andweeb/presence.nvim" }
+wal = { git = "dylanaraps/wal.vim" }
+neodev = { git = "folke/neodev.nvim" }
+cmp-buffer = { git = "hrsh7th/cmp-buffer" }
+cmp-cmdline = { git = "hrsh7th/cmp-cmdline" }
+cmp-nvim-lsp = { git = "hrsh7th/cmp-nvim-lsp" }
+cmp-path = { git = "hrsh7th/cmp-path" }
+nvim-cmp = { git = "hrsh7th/nvim-cmp" }
+null-ls = { git = "jose-elias-alvarez/null-ls.nvim" }
+nvim-lspconfig = { git = "neovim/nvim-lspconfig" }
+plenary = { git = "nvim-lua/plenary.nvim" }
+telescope = { git = "nvim-telescope/telescope.nvim" }
+nvim-treesitter = { git = "nvim-treesitter/nvim-treesitter" }
+venn = { git = "jbyuki/venn.nvim" }
+neorg = "8.2.1"
+"rocks-config.nvim" = "1.2.3"
