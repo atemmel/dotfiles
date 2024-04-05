@@ -56,8 +56,6 @@ require "lazy".setup({
 })
 --]]
 
-require "neodev".setup({})
-
 require "statusline"
 require "general"
 require "keybinds"
@@ -68,6 +66,7 @@ if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
 
+require "neodev".setup({})
 require "lsp"
 require "statusline"
 require "autocmd"
