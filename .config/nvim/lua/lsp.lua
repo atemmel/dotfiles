@@ -41,26 +41,11 @@ require "lspconfig".pyright.setup {
 	on_attach = on_attach,
 }
 
+require "java".setup({})
+
 require "lspconfig".jdtls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
-	init_options = {
-		jvm_args = {
-			"-javaagent:" .. home .. "/.m2/lombok.jar",
-		},
-	},
-	settings = {
-		["java"] = {
-			eclipse = {
-				format = {
-					enabled = true,
-					settings = {
-						url = vim.fn.stdpath "config" .. "/java/fmt/config.xml",
-					},
-				},
-			},
-		},
-	},
 }
 
 require "lspconfig".volar.setup {
@@ -86,9 +71,9 @@ require "lspconfig".volar.setup {
 
 local signs = {
 	Error = "\u{ea87}",
-	Warn = "\u{e654}",
-	Hint = "\u{f420}",
-	Info = "\u{f449}",
+	Warn  = "\u{e654}",
+	Hint  = "\u{f420}",
+	Info  = "\u{f449}",
 }
 
 for type, icon in pairs(signs) do

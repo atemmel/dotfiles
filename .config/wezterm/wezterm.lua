@@ -2,6 +2,8 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
+config.default_domain = 'WSL:Arch'
+
 config.enable_tab_bar = false
 
 --TODO: byt till vadhelst neovide har

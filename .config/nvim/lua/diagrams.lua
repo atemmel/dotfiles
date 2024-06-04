@@ -18,4 +18,4 @@ function _G.Diagram()
 	end
 end
 
-vim.api.nvim_set_keymap('n', 'gv', ":lua Toggle_venn()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', 'gv', ":lua Diagram()<CR>", { noremap = true })

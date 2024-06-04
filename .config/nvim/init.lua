@@ -1,25 +1,3 @@
-local rocks_config = {
-	rocks_path = "/home/temmel/.local/share/nvim/rocks",
-	luarocks_binary = "/home/temmel/.local/share/nvim/rocks/bin/luarocks",
-}
-
-vim.g.rocks_nvim = rocks_config
-
-local luarocks_path = {
-	vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?.lua"),
-	vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?", "init.lua"),
-}
-package.path = package.path .. ";" .. table.concat(luarocks_path, ";")
-
-local luarocks_cpath = {
-	vim.fs.joinpath(rocks_config.rocks_path, "lib", "lua", "5.1", "?.so"),
-	vim.fs.joinpath(rocks_config.rocks_path, "lib64", "lua", "5.1", "?.so"),
-}
-package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
-
-vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "*", "*"))
-
---[[
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	print("Installing Lazy...")
@@ -50,11 +28,36 @@ require "lazy".setup({
 	"hrsh7th/nvim-cmp",
 	"jose-elias-alvarez/null-ls.nvim",
 	"neovim/nvim-lspconfig",
-	"nvim-lua/plenary.nvim",
-	"nvim-telescope/telescope.nvim",
+	{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.5',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 	"nvim-treesitter/nvim-treesitter",
+	"jbyuki/venn.nvim",
+	{
+		'nvim-java/nvim-java',
+		dependencies = {
+			'nvim-java/lua-async-await',
+			'nvim-java/nvim-java-refactor',
+			'nvim-java/nvim-java-core',
+			'nvim-java/nvim-java-test',
+			'nvim-java/nvim-java-dap',
+			'MunifTanjim/nui.nvim',
+			'neovim/nvim-lspconfig',
+			'mfussenegger/nvim-dap',
+			{
+				'williamboman/mason.nvim',
+				opts = {
+					registries = {
+						'github:nvim-java/mason-registry',
+						'github:mason-org/mason-registry',
+					},
+				},
+			}
+		},
+	},
 })
---]]
 
 require "statusline"
 require "general"
@@ -66,7 +69,8 @@ if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
 
-require "neodev".setup({})
+-- TODO
+-- require "neodev".setup({})
 require "lsp"
 require "statusline"
 require "autocmd"
