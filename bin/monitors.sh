@@ -3,11 +3,9 @@
 choice=$(echo -e "left\nright\ntop\nmirror\nrestore" | rofi -dmenu -i -p "Use external monitor as")
 [ -z "$choice" ] && exit 0
 
-xrandr --output eDP-1 primary
-
 line=$(xrandr | grep ' connected' | grep -v 'eDP-1')
 targetmonitor=$(echo $line | cut -d " " -f1)
-targetresolution=$(echo $line | sed -r 's/.* ([0-9]+x[0-9]+).*/\1/')
+targetresolution=$(xrandr --query | grep  -A 1 -P '^(?!eDP-1).* connected' | grep -v 'connected' | sed -r 's/.* ([0-9]+x[0-9]+).*/\1/')
 
 xrandr --output eDP-1 --transform none
 
