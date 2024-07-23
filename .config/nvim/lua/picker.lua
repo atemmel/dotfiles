@@ -26,8 +26,6 @@ local ignore = {
 	"go.sum",
 	"node_modules",
 	"node_modules/",
-	"package-lock.json",
-	"package.json",
 	"target/",
 	"vendor/",
 	"zig-cache",
@@ -36,11 +34,11 @@ local ignore = {
 	"zig-out/",
 }
 
-require "telescope".setup {
+require "telescope".setup({
 	defaults = {
 		file_ignore_patterns = ignore,
 	}
-}
+})
 
 local center_list = require "telescope.themes".get_dropdown({
 	previewer = false,

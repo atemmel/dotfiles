@@ -25,7 +25,7 @@ end
 
 ---Opens a picker to select git projects
 ---@param dir string
----@param opts object
+---@param opts table
 local function picker(dir, opts)
 	opts = opts or {}
 
