@@ -35,7 +35,7 @@ function Format()
 	end
 	if vim.bo.filetype == "xml" then
 		format_xml()
-	else
+	elseif vim.bo.filetype ~= "java" then
 		vim.lsp.buf.format()
 	end
 end

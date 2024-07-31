@@ -28,12 +28,36 @@ require "lazy".setup({
 	"hrsh7th/nvim-cmp",
 	"jose-elias-alvarez/null-ls.nvim",
 	"neovim/nvim-lspconfig",
-	"nvim-lua/plenary.nvim",
-	"nvim-telescope/telescope.nvim",
+	{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.5',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 	"nvim-treesitter/nvim-treesitter",
+	"jbyuki/venn.nvim",
+	{
+		'nvim-java/nvim-java',
+		dependencies = {
+			'nvim-java/lua-async-await',
+			'nvim-java/nvim-java-refactor',
+			'nvim-java/nvim-java-core',
+			'nvim-java/nvim-java-test',
+			'nvim-java/nvim-java-dap',
+			'MunifTanjim/nui.nvim',
+			'neovim/nvim-lspconfig',
+			'mfussenegger/nvim-dap',
+			{
+				'williamboman/mason.nvim',
+				opts = {
+					registries = {
+						'github:nvim-java/mason-registry',
+						'github:mason-org/mason-registry',
+					},
+				},
+			}
+		},
+	},
 })
-
-require "neodev".setup({})
 
 require "statusline"
 require "general"
@@ -45,8 +69,11 @@ if os.execute("command -v prettierd") == 0 then
 	require "prettiercfg"
 end
 
+-- TODO
+-- require "neodev".setup({})
 require "lsp"
 require "statusline"
 require "autocmd"
+require "diagrams"
 Utils = require "utils"
 Projects = require "projects"

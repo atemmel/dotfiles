@@ -26,8 +26,8 @@ local function dump_recurse(o, depth)
 	end
 end
 
--- Dumbs object recursively to prettified string
----@param o object
+-- Dumps object recursively to prettified string
+---@param o table
 ---@return string
 local function dump(o)
 	return dump_recurse(o, 0)

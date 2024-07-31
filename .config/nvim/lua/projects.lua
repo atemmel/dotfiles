@@ -12,10 +12,10 @@ local action_state = require "telescope.actions.state"
 local function find(dir)
 	local cmd = "find " .. dir .. " -name node_modules -prune -o -name .git -print | sort"
 	local file = io.popen(cmd, "r")
-	local output = file:read("*a")
 	if file == nil then
 		return {}
 	end
+	local output = file:read("*a")
 	local list = utils.split(output, "\n")
 	for k, v in pairs(list) do
 		list[k] = string.sub(v, 1, -6)
@@ -25,7 +25,7 @@ end
 
 ---Opens a picker to select git projects
 ---@param dir string
----@param opts object
+---@param opts table
 local function picker(dir, opts)
 	opts = opts or {}
 

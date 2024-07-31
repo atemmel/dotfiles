@@ -1,7 +1,8 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local home = os.getenv("HOME")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
 	vim.keymap.set("n", "H", vim.lsp.buf.hover, { buffer = 0 })
@@ -9,25 +10,25 @@ local on_attach = function()
 	vim.keymap.set("n", "cn", vim.lsp.buf.rename, { buffer = 0 })
 end
 
-require 'lspconfig'.zls.setup {
+require "lspconfig".zls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require 'lspconfig'.gopls.setup {
+require "lspconfig".gopls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require 'lspconfig'.clangd.setup {
+require "lspconfig".clangd.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require 'lspconfig'.lua_ls.setup {
+require "lspconfig".lua_ls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { 'vim' },
+				globals = { "vim" },
 			},
 			workspace = {
 				checkThirdParty = false,
@@ -35,62 +36,46 @@ require 'lspconfig'.lua_ls.setup {
 		},
 	},
 }
-require 'lspconfig'.pyright.setup {
+require "lspconfig".pyright.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
 
-require 'lspconfig'.jdtls.setup {
+require "java".setup({})
+
+require "lspconfig".jdtls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
-	settings = {
-		['java'] = {
-			eclipse = {
-				format = {
-					enabled = true,
-					settings = {
-						url = vim.fn.stdpath "config" .. "/java/fmt/config.xml",
-					},
-				},
-			},
-		},
-	},
 }
 
-require 'lspconfig'.volar.setup {
+require "lspconfig".volar.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = {
-		'typescript',
-		'javascript',
-		'javascript-react',
-		'typescript-react',
-		'vue',
-		'json',
+		"javascript",
+		"javascript-react",
+		"json",
+		"typescript",
+		"typescript-react",
+		"vue",
 	},
 	init_options = {
 		typescript = {
-			tsdk = '/usr/lib/node_modules/typescript/lib',
+			tsdk = "/usr/lib/node_modules/typescript/lib",
+		},
+		vue = {
+			hybridMode = false,
 		},
 	},
 }
 
---[[
-require 'lspconfig'.eslint.setup({
-	on_attach = function(_, bufnr)
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = bufnr,
-			command = "EslintFixAll",
-		})
-	end,
-	cmd = {
-		"eslint",
-		"--stdin",
-	},
-})
---]]
+local signs = {
+	Error = "\u{ea87}",
+	Warn  = "\u{e654}",
+	Hint  = "\u{f420}",
+	Info  = "\u{f449}",
+}
 
-local signs = { Error = "\u{ea87}", Warn = "\u{e654}", Hint = "\u{f420}", Info = "\u{f449}" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -140,8 +125,8 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require "cmp"
+local luasnip = require "luasnip"
 
 cmp.setup({
 	snippet = {
@@ -150,9 +135,9 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-		['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-		['<Tab>'] = cmp.mapping(function(fallback)
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -163,7 +148,7 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s", "c" }),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -174,11 +159,11 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
+		{ name = 'file' },
 		{ name = 'luasnip' },
-		{ name = 'buffer' },
+		{ name = 'nvim_lsp' },
 	})
 })
