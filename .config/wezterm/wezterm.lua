@@ -2,7 +2,9 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
-config.default_domain = 'WSL:Arch'
+if string.find(wezterm.target_triple, "windows") then
+	config.default_domain = 'WSL:Arch'
+end
 
 config.enable_tab_bar = false
 
