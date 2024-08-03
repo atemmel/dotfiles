@@ -25,8 +25,8 @@ shopt -s globstar
 
 alias v='nvim'
 alias c='clear'
-alias ll='ls -lh'
-alias la='ls -lha'
+alias ll='ls -lhrt'
+alias la='ls -lhrtA'
 alias gs='git status'
 alias gp='git pull'
 alias gc='git checkout'
