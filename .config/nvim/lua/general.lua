@@ -4,10 +4,11 @@ set scrolloff=7
 set ts=4 sw=4
 highlight Comment cterm=italic gui=italic
 filetype plugin indent on
-colorscheme oxocarbon
-colorscheme carbonfox
 set updatetime=1000
 set updatetime=500
+
+colorscheme wal
+"colorscheme carbonfox
 
 if exists('g:neovide')
 	let g:neovide_remember_window_size = v:true

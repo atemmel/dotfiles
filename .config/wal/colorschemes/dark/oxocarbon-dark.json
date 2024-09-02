@@ -1,0 +1,26 @@
+{
+  "refer": "https://github.com/nyoom-engineering/oxocarbon-iterm2",
+  "special": {
+    "background": "#161616",
+    "cursor": "#d0d0d0",
+    "foreground": "#d0d0d0"
+  },
+  "colors": {
+    "color0": "#262626",
+    "color1": "#33b1ff",
+    "color2": "#be95ff",
+    "color3": "#42be65",
+    "color4": "#78a9ff",
+    "color5": "#82cfff",
+    "color6": "#3ddbd9",
+    "color7": "#f2f2f2",
+    "color8": "#525252",
+    "color9": "#33b1ff",
+    "color10": "#be95ff",
+    "color11": "#42be65",
+    "color12": "#78a9ff",
+    "color13": "#82cfff",
+    "color14": "#08bdba",
+    "color15": "#ffffff"
+  }
+}

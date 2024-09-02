@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require "lazy".setup({
-	"EdenEast/nightfox.nvim",
+	--"EdenEast/nightfox.nvim",
 	"L3MON4D3/LuaSnip",
 	"MunifTanjim/prettier.nvim",
 	"VundleVim/Vundle.vim",

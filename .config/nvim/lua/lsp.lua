@@ -69,6 +69,8 @@ require "lspconfig".volar.setup {
 	},
 }
 
+require 'lspconfig'.superhtml.setup {}
+
 local signs = {
 	Error = "\u{ea87}",
 	Warn  = "\u{e654}",
