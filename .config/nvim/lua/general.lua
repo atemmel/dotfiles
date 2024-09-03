@@ -8,8 +8,8 @@ filetype plugin indent on
 set updatetime=1000
 set updatetime=500
 
-colorscheme wal
-"colorscheme carbonfox
+"colorscheme wal
+colorscheme carbonfox
 
 if exists('g:neovide')
 	let g:neovide_remember_window_size = v:true
