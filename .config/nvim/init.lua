@@ -33,7 +33,6 @@ require "lazy".setup({
 		tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
-	"nvim-treesitter/nvim-treesitter",
 	"jbyuki/venn.nvim",
 	{
 		'nvim-java/nvim-java',
@@ -79,6 +78,27 @@ require "lazy".setup({
 			vim.wo.foldlevel = 99
 			vim.wo.conceallevel = 2
 		end,
+	},
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+		config = true,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		opts = {
+			ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+			highlight = { enable = true },
+		},
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
 	},
 })
 

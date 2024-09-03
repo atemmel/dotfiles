@@ -2,6 +2,7 @@ vim.api.nvim_exec2([[
 set number
 set scrolloff=7
 set ts=4 sw=4
+set expandtab
 highlight Comment cterm=italic gui=italic
 filetype plugin indent on
 set updatetime=1000
