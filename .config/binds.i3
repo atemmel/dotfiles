@@ -66,3 +66,6 @@ alt + m
 
 alt + o
 	tmenu -dir ~/doc -command $HOME/bin/open-project project
+
+alt + e
+    neovide
