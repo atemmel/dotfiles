@@ -18,7 +18,10 @@ require "lazy".setup({
     "L3MON4D3/LuaSnip",
     "MunifTanjim/prettier.nvim",
     "VundleVim/Vundle.vim",
-    "andweeb/presence.nvim",
+    {
+        'IogaMaster/neocord',
+        event = "VeryLazy"
+    },
     "dylanaraps/wal.vim",
     "folke/neodev.nvim",
     "hrsh7th/cmp-buffer",
@@ -94,6 +97,11 @@ require "lazy".setup({
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
         end,
+    },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
     },
 })
 
