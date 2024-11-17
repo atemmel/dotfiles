@@ -20,6 +20,9 @@ else
 	alias vh='nvim .'
 fi
 
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
 shopt -s autocd
 shopt -s globstar
 

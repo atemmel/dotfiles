@@ -25,5 +25,6 @@ if [[ -z $DISPLAY ]] && [[ "$(tty)" == '/dev/tty1' ]]; then
 	#done
 
 	#exec startx "$HOME/.xinitrc i3"
-	exec startx
+	#exec startx
+    echo blaargh
 fi
