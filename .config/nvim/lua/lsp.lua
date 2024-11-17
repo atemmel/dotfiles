@@ -69,7 +69,7 @@ require "lspconfig".volar.setup {
     },
 }
 
-if os.execute("command -v prettierd > /dev/null") == 0 then
+if vim.fn.executable("superhtml") == 1 then
     require 'lspconfig'.superhtml.setup {}
 end
 

@@ -111,7 +111,8 @@ require "keybinds"
 
 require "picker"
 
-if os.execute("command -v prettierd > /dev/null") == 0 then
+-- needs to be loaded before lsp
+if vim.fn.executable("prettierd") == 1 then
     require "prettiercfg"
 end
 
