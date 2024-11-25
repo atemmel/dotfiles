@@ -36,6 +36,13 @@ require "lazy".setup({
         tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
+    },
     "jbyuki/venn.nvim",
     {
         'nvim-java/nvim-java',
@@ -123,5 +130,6 @@ require "statusline"
 require "autocmd"
 require "diagrams"
 require "home"
+require "dbg"
 Utils = require "utils"
 Projects = require "projects"
