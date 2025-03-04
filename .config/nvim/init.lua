@@ -22,8 +22,19 @@ require "lazy".setup({
         opts = {},
     },
     "L3MON4D3/LuaSnip",
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                "nvim-dap-ui",
+            },
+        },
+    },
     "MunifTanjim/prettier.nvim",
-    "VundleVim/Vundle.vim",
     {
         'IogaMaster/neocord',
         event = "VeryLazy"
@@ -36,6 +47,7 @@ require "lazy".setup({
     "hrsh7th/cmp-path",
     "hrsh7th/nvim-cmp",
     "jose-elias-alvarez/null-ls.nvim",
+    "leoluz/nvim-dap-go",
     "neovim/nvim-lspconfig",
     {
         'nvim-telescope/telescope.nvim',
@@ -116,6 +128,13 @@ require "lazy".setup({
         priority = 1000,
         config = true,
     },
+    {
+        'theHamsta/nvim-dap-virtual-text',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+            'mfussenegger/nvim-dap',
+        },
+    }
 })
 
 require "statusline"

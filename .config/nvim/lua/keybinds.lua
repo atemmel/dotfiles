@@ -1,3 +1,5 @@
+local dap, dapui = require("dap"), require("dapui")
+
 local map = function(mode, keys, cmd)
     vim.api.nvim_set_keymap(
         mode,
@@ -58,7 +60,26 @@ vmap("<S-c>", "\"+y")
 vmap("e", "w")
 vmap("w", "b")
 
-nmap("dbg", ":lua require'dapui'.open()<cr>")
+local is_debug = false
+
+function ToggleDebug()
+    if is_debug then
+        dapui.close()
+        dap.disconnect()
+    else
+        dapui.open()
+    end
+    is_debug = not is_debug
+end
+
+nmap("dbg", ":lua require'keybinds'.ToggleDebug()<cr>")
+nmap("<BS>", ":DapToggleBreakpoint<cr>")
+nmap("gn", ":lua require'dap'.continue()<cr>")
+nmap("gd", ":lua require'dap'.step_into()<cr>")
+nmap("gu", ":lua require'dap'.step_out()<cr>")
+nmap("go", ":lua require'dap'.step_over()<cr>")
+nmap("gr", ":lua require'dap'.restart()<cr>")
+nmap("gx", ":lua require'dap'.disconnect()<cr>")
 
 -- Function to check if a floating dialog exists and if not
 -- then check for diagnostics under the cursor
@@ -89,3 +110,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
     command = "lua OpenDiagnosticIfNoFloat()",
     group = "lsp_diagnostics_hold",
 })
+
+return {
+    ToggleDebug = ToggleDebug,
+}
