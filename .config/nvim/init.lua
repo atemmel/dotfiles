@@ -134,6 +134,12 @@ require "lazy".setup({
             'nvim-treesitter/nvim-treesitter',
             'mfussenegger/nvim-dap',
         },
+    },
+    {
+        "nvzone/typr",
+        dependencies = "nvzone/volt",
+        opts = {},
+        cmd = { "Typr", "TyprStats" },
     }
 })
 
