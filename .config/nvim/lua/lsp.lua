@@ -10,6 +10,11 @@ local on_attach = function()
     vim.keymap.set("n", "cn", vim.lsp.buf.rename, { buffer = 0 })
 end
 
+require "lspconfig".gleam.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 require "lspconfig".zls.setup {
     capabilities = capabilities,
     on_attach = on_attach,

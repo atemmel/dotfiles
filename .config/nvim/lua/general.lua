@@ -33,3 +33,5 @@ if exists('g:neovide')
 endif
 
 ]], {})
+
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
