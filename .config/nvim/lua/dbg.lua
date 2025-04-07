@@ -93,6 +93,35 @@ dap.configurations.c = {
     },
 }
 
+local dap = require("dap")
+
+-- configure codelldb adapter
+dap.adapters.codelldb = {
+    type = "server",
+    port = "${port}",
+    executable = {
+        command = "codelldb",
+        args = { "--port", "${port}" },
+    },
+}
+
+-- setup a debugger config for zig projects
+dap.configurations.zig = {
+    {
+        -- If you get an "Operation not permitted" error using this, try disabling YAMA:
+        --  echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+        name = "Attach to process",
+        --name = 'Launch',
+        type = 'codelldb',
+        request = "attach",
+        --request = 'launch',
+        pid = require('dap.utils').pick_process,
+        --program = '${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}',
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+    },
+}
 
 require('dap-go').setup {
     -- Additional dap configurations can be added.

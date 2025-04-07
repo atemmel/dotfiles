@@ -46,6 +46,29 @@ require "java".setup({})
 require "lspconfig".jdtls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+        java = {
+            configuration = {
+                runtimes = {
+                    {
+                        name = "Java 21",
+                        path = "/lib/jvm/java-21-openjdk",
+                        default = true,
+                    },
+                    {
+                        name = "Java 11",
+                        path = "/lib/jvm/java-11-openjdk",
+                    },
+                    {
+                        name = "Java 8",
+                        path = "/lib/jvm/java-8-openjdk",
+                    },
+                },
+            },
+
+        },
+
+    },
 }
 
 require "lspconfig".volar.setup {
