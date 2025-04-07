@@ -1,0 +1,5 @@
+#!/bin/sh
+
+choice=$(archlinux-java status | tail -n +2 | awk '{ print $1 }' | fzf)
+
+sudo archlinux-java set "$choice"
