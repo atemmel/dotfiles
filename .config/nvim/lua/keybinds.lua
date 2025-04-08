@@ -1,5 +1,9 @@
 local dap, dapui = require("dap"), require("dapui")
 
+require('telekasten').setup({
+    home = vim.fn.expand("~/.zettelkasten"), -- Put the name of your notes directory here
+})
+
 local map = function(mode, keys, cmd)
     vim.api.nvim_set_keymap(
         mode,
@@ -10,6 +14,10 @@ local map = function(mode, keys, cmd)
             silent = true,
         }
     )
+end
+
+local imap = function(keys, cmd)
+    map("i", keys, cmd)
 end
 
 local nmap = function(keys, cmd)
@@ -60,6 +68,22 @@ tmap("<C-w>", "<C-\\><C-n>")
 vmap("<S-c>", "\"+y")
 vmap("e", "w")
 vmap("w", "b")
+
+-- Launch panel if nothing is typed after <leader>z
+nmap(" z", "<cmd>Telekasten panel<CR>")
+
+-- Most used functions
+nmap(" zf", "<cmd>Telekasten find_notes<CR>")
+nmap(" zg", "<cmd>Telekasten search_notes<CR>")
+nmap(" zd", "<cmd>Telekasten goto_today<CR>")
+nmap(" zz", "<cmd>Telekasten follow_link<CR>")
+nmap(" zn", "<cmd>Telekasten new_note<CR>")
+nmap(" zc", "<cmd>Telekasten show_calendar<CR>")
+nmap(" zb", "<cmd>Telekasten show_backlinks<CR>")
+nmap(" zI", "<cmd>Telekasten insert_img_link<CR>")
+
+-- Call insert link automatically when we start typing a link
+imap("[[", "<cmd>Telekasten insert_link<CR>")
 
 local is_debug = false
 
