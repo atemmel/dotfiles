@@ -63,12 +63,16 @@ if [[ -e ~/.bashrc-local ]] ; then
 	source ~/.bashrc-local
 fi
 
+if [[ -e ~/bin-local ]] ; then
+    PATH=$PATH./bin-local
+fi
+
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
 cherry
 if [ $? -eq 0 ] ; then
-    echo we outie
+    echo Exiting cherry, you are now in bash
     #exit 0
 fi
