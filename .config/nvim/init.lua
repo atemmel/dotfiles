@@ -85,38 +85,14 @@ require "lazy".setup({
         },
     },
     {
-        "nvim-neorg/neorg",
-        lazy = false,
-        version = "*",
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.concealer"] = {},
-                    ["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                            default_workspace = "notes",
-                        },
-                    },
-                },
-            }
-            vim.wo.foldlevel = 99
-            vim.wo.conceallevel = 2
-        end,
-    },
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
-        config = true,
+        'renerocksai/telekasten.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' }
     },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         opts = {
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+            ensure_installed = { "c", "lua", "vim", "zig", "go", "java", "vimdoc", "query", },
             highlight = { enable = true },
         },
         config = function(_, opts)
