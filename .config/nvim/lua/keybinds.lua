@@ -51,7 +51,7 @@ nmap("<C-k>", ":lua vim.diagnostic.goto_prev()<cr>")
 
 nmap("tp", ":lua require'picker'.projects('~/doc')<cr>")
 nmap("tgc", ":lua require'picker'.checkout()<cr>")
-nmap(" ds", ":lua require'telescope.builtin'.lsp_document_symbols()<cr>")
+nmap("gs", ":lua require'telescope.builtin'.lsp_document_symbols()<cr>")
 -- TODO: this could be presented prettier
 nmap("gp", ":!git pull<cr>")
 

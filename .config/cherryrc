@@ -11,8 +11,8 @@ alias gc "git checkout"
 # TODO: dessa alias funkar kanske inte
 alias go-release         `go build -ldflags "-s -w"`
 alias go-release-win     `env GOOS=windows GOARCH=amd64 go build -ldflags="-s -w"`
-alias go-release-mac     `env GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w"`
-alias go-release-mac-old `env GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w"`
+alias go-release-mac     `env GOOS=darwin  GOARCH=arm64 go build -ldflags="-s -w"`
+alias go-release-mac-old `env GOOS=darwin  GOARCH=amd64 go build -ldflags="-s -w"`
 
 say `
      o;%%%.    
@@ -22,4 +22,4 @@ say `
    /#  \\ /#  \\  
    \\___/ \\___/  
 
-`             
+`
