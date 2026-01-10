@@ -16,6 +16,7 @@ local ignore = {
     "%.o",
     "%.png",
     "%.ttf",
+    "%.uid",
     "%.unity",
     "%.vscode",
     "%.woff2",

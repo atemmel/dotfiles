@@ -1,7 +1,6 @@
 -- For debugging
 -- vim.lsp.set_log_level("debug")
 
-local home = os.getenv("HOME")
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function()
@@ -42,6 +41,10 @@ require "lspconfig".lua_ls.setup {
     },
 }
 require "lspconfig".pyright.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+require "lspconfig".gdscript.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
