@@ -26,20 +26,31 @@ require "lspconfig".clangd.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
-require "lspconfig".lua_ls.setup {
+
+vim.lsp.config.lua_ls = {
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         Lua = {
+            runtime = "LuaJIT",
+            signatureHelp = { enabled = true },
             diagnostics = {
-                globals = { "vim" },
+                globals = {
+                    'vim',
+                },
             },
             workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
             },
         },
     },
 }
+
+vim.lsp.enable("lua_ls")
+
 require "lspconfig".pyright.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -119,6 +130,15 @@ vim.lsp.config('vtsls', vtsls_config)
 vim.lsp.config('vue_ls', vue_ls_config)
 vim.lsp.config('ts_ls', ts_ls_config)
 vim.lsp.enable({ 'ts_ls', 'vue_ls' })
+
+vim.lsp.config.cherry = {
+    cmd = { "/home/temmel/doc/cherry-shell/zig-out/bin/cherry", "--lsp" },
+    filetypes = { "cherry" },
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.lsp.enable("cherry")
 
 if vim.fn.executable("superhtml") == 1 then
     require 'lspconfig'.superhtml.setup {}
