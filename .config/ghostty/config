@@ -1,1 +1,3 @@
 #gtk-titlebar = false
+window-inherit-working-directory = false
+clipboard-paste-protection = false

@@ -1,13 +1,11 @@
-#!/bin/sh
+#!/usr/bin/bash
 
-path=$1
+path=$HOME/doc
 
-[ -z $path ] && echo "No path specified, exiting" && exit 1
+project=$(weaver -o "$path")
 
-# Find out which of these two commands is the more appealing one
-cd $path || exit 2
-$TERMCMD -e $SHELL &
+[ -z $project ] && echo "No path specified, exiting" && exit 1
 
-#$TERMCMD -e nvim $path &
-# Demo command
-#$TERMCMD --class "[floating]" -e nvim $path &
+cd $project || exit 2
+
+neovide .
